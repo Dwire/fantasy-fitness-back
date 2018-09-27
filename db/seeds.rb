@@ -10,6 +10,11 @@ User.destroy_all
 Team.destroy_all
 UserTeam.destroy_all
 League.destroy_all
+LeaguePack.destroy_all
+Workout.destroy_all
+WorkoutPack.destroy_all
+Completion.destroy_all
+Pack.destroy_all
 
 # CREATE USERS
 greg = User.create(name: 'Greg', email: 'gj@gmail.com')
@@ -27,22 +32,25 @@ ff_league = League.create(name: 'Fantasy Fitness League')
 yoga = Pack.create(name: 'Yoga Pack')
 cardio = Pack.create(name: 'Cardio')
 
+lp1 = LeaguePack.create(league: ff_league, pack: yoga)
+lp1 = LeaguePack.create(league: ff_league, pack: cardio)
+
 # CREATE TEAMS
-pats = Team.create(name: 'Pats', motto: 'Ringland', league_id: 1, pack_id: 1)
-jags = Team.create(name: 'Jags', motto: 'Raaawwwrrr', league_id: 1, pack_id: 1)
-browns = Team.create(name: 'Browns', motto: 'Its a rebuilding year', league_id: 1, pack_id: 1)
+pats = Team.create(name: 'Pats', motto: 'Ringland', league: ff_league)
+jags = Team.create(name: 'Jags', motto: 'Raaawwwrrr', league: ff_league)
+browns = Team.create(name: 'Browns', motto: 'Its a rebuilding year', league: ff_league)
 
 # CREATE USERTEAMS (JOIN TABLE)
-UserTeam.create(user_id: 1, team_id: 1)
-UserTeam.create(user_id: 1, team_id: 2)
-UserTeam.create(user_id: 2, team_id: 1)
-UserTeam.create(user_id: 2, team_id: 2)
-UserTeam.create(user_id: 3, team_id: 2)
-UserTeam.create(user_id: 4, team_id: 1)
-UserTeam.create(user_id: 5, team_id: 3)
-UserTeam.create(user_id: 6, team_id: 3)
-UserTeam.create(user_id: 7, team_id: 3)
-UserTeam.create(user_id: 7, team_id: 1)
+UserTeam.create(user: greg, team: pats)
+UserTeam.create(user: greg, team: jags)
+UserTeam.create(user: arren, team: pats)
+UserTeam.create(user: arren, team: browns)
+UserTeam.create(user: forrest, team: browns)
+UserTeam.create(user: forrest, team: pats)
+UserTeam.create(user: harrison, team: browns)
+UserTeam.create(user: harrison, team: jags)
+UserTeam.create(user: eva, team: pats)
+UserTeam.create(user: eva, team: jags)
 
 
 
@@ -60,7 +68,7 @@ gate_pose = Workout.create(name: 'Gate Pose', description: 'Open up your gate')
 
 
 # CREATE WORKOUTPACKS (JOIN TABLE)
-WorkoutPack.create(pack_id: 1, workout_id: 1)
-WorkoutPack.create(pack_id: 1, workout_id: 2)
-WorkoutPack.create(pack_id: 1, workout_id: 3)
-WorkoutPack.create(pack_id: 1, workout_id: 4)
+WorkoutPack.create(pack: yoga, workout: downward_dog)
+WorkoutPack.create(pack: yoga, workout: chair_pose)
+WorkoutPack.create(pack: yoga, workout: eagle_pose)
+WorkoutPack.create(pack: yoga, workout: gate_pose)
