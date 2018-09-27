@@ -6,7 +6,6 @@ class Api::V1::UsersController < ApplicationController
     # deciding whether or not to use the serializer for data loading
     users = UserSerializer.new(@users).serialized_json
     render json: users
-    # should we be rendering json????
   end
 
   def show
