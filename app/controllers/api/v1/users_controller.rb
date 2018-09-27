@@ -7,6 +7,7 @@ class Api::V1::UsersController < ApplicationController
     users = UserSerializer.new(@users).serialized_json
     render json: users
     # should we be rendering json????
+    # trying to close an issue
   end
 
   def show
