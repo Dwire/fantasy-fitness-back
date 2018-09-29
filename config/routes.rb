@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :teams, except: [:new, :edit]
       resources :packs, only: [:index, :create, :show]
       resources :workouts, only: [:index, :show]
+      resources :completions, only: [:create, :update]
     end
   end
 end

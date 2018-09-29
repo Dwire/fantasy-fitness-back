@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 User.destroy_all
 Team.destroy_all
 UserTeam.destroy_all
@@ -66,9 +59,13 @@ gate_pose = Workout.create(name: 'Gate Pose', description: 'Open up your gate')
 # jump = Workout.create(name: 'Jump Rope', description: 'bounce all day')
 
 
-
 # CREATE WORKOUTPACKS (JOIN TABLE)
 WorkoutPack.create(pack: yoga, workout: downward_dog)
 WorkoutPack.create(pack: yoga, workout: chair_pose)
 WorkoutPack.create(pack: yoga, workout: eagle_pose)
 WorkoutPack.create(pack: yoga, workout: gate_pose)
+
+# CREATE COMPLETIONS - TEST 1
+
+Completion.create(user: greg, team: pats, workout: downward_dog, points: 100, status: 'claimed')
+Completion.create(user: greg, team: pats, workout: chair_pose, points: 150, status: 'claimed')
