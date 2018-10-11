@@ -61,11 +61,15 @@ gate_pose = Workout.create(name: 'Gate Pose', description: 'Open up your gate')
 
 # CREATE WORKOUTPACKS (JOIN TABLE)
 WorkoutPack.create(pack: yoga, workout: downward_dog)
+# need to be able to have the same workout multiple times in a pack....Completions needs to reference workout_pack not just workout
+WorkoutPack.create(pack: yoga, workout: chair_pose)
 WorkoutPack.create(pack: yoga, workout: chair_pose)
 WorkoutPack.create(pack: yoga, workout: eagle_pose)
 WorkoutPack.create(pack: yoga, workout: gate_pose)
 
 # CREATE COMPLETIONS - TEST 1
 
-Completion.create(user: greg, team: pats, workout: downward_dog, points: 100, status: 'claimed')
-Completion.create(user: greg, team: pats, workout: chair_pose, points: 150, status: 'claimed')
+# Completion.create(user: greg, team: pats, workout: downward_dog, workout_pack_id: 1, points: 100, status: 'claimed')
+# Completion.create(user: greg, team: pats, workout: chair_pose, workout_pack_id: 2, points: 150, status: 'claimed')
+Completion.create(user: greg, team: pats, workout_pack_id: 1, points: 100, status: 'claimed')
+Completion.create(user: greg, team: pats, workout_pack_id: 2, points: 150, status: 'claimed')
