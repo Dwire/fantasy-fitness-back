@@ -25,7 +25,7 @@ class Api::V1::CompletionsController < ApplicationController
   private
 
   def completion_params
-    params.require(:completion).permit(:user_id, :team_id, :workout_id, :points)
+    params.require(:completion).permit(:user_id, :team_id, :workout_id, :workout_pack_id, :points)
   end
 
   def check_for_existing

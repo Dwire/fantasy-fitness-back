@@ -1,7 +1,8 @@
 class Completion < ApplicationRecord
   belongs_to :user
-  belongs_to :workout
+  # belongs_to :workout
   belongs_to :team
+  belongs_to :workout_pack
 
   # validate :unique_team_and_workout
   # validation for uniqueness of workout_id and team_id -------- per pack?
