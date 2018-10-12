@@ -8,51 +8,70 @@ Workout.destroy_all
 WorkoutPack.destroy_all
 Completion.destroy_all
 Pack.destroy_all
+Exercise.destroy_all
+WorkoutExercise.destroy_all
 
 # CREATE USERS
-greg = User.create(name: 'Greg', email: 'gj@gmail.com')
-arren = User.create(name: 'Arren', email: 'ar@gmail.com')
-forrest = User.create(name: 'Forrest', email: 'fd@gmail.com')
-harrison = User.create(name: 'Harrison', email: 'hb@gmail.com')
-amelia = User.create(name: 'Amelia', email: 'ad@gmail.com')
-robin = User.create(name: 'Robin', email: 'rw@gmail.com')
-eva = User.create(name: 'Eva', email: 'ed@gmail.com')
+# greg = User.create(name: 'Greg', email: 'gj@gmail.com')
+# arren = User.create(name: 'Arren', email: 'ar@gmail.com')
+# forrest = User.create(name: 'Forrest', email: 'fd@gmail.com')
+# harrison = User.create(name: 'Harrison', email: 'hb@gmail.com')
+# amelia = User.create(name: 'Amelia', email: 'ad@gmail.com')
+# robin = User.create(name: 'Robin', email: 'rw@gmail.com')
+# eva = User.create(name: 'Eva', email: 'ed@gmail.com')
+
+10.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.username(5..8),
+    email: Faker::Internet.email,
+    avatar: Faker::Avatar.image,
+    bio: Faker::HarryPotter.quote,
+    tagline: Faker::NewGirl.quote
+  )
+end
 
 # CREATE LEAGUES
-ff_league = League.create(name: 'Fantasy Fitness League')
+ff_league = League.create(
+  name: 'Fantasy Fitness League',
+  image_url: Faker::Avatar.image,
+  description: Faker::Movie.quote,
+  motto: Faker::GameOfThrones.quote,
+  number_of_teams: 10,
+  roster_size: 3
+)
 
 # CREATE PACKS
-yoga = Pack.create(name: 'Yoga Pack')
-cardio = Pack.create(name: 'Cardio')
+yoga = Pack.create(name: 'Yoga Pack', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+cardio = Pack.create(name: 'Cardio', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
 
+# CREATE LEAGUE_PACKS
 lp1 = LeaguePack.create(league: ff_league, pack: yoga)
-lp1 = LeaguePack.create(league: ff_league, pack: cardio)
+lp2 = LeaguePack.create(league: ff_league, pack: cardio)
 
 # CREATE TEAMS
-pats = Team.create(name: 'Pats', motto: 'Ringland', league: ff_league)
-jags = Team.create(name: 'Jags', motto: 'Raaawwwrrr', league: ff_league)
-browns = Team.create(name: 'Browns', motto: 'Its a rebuilding year', league: ff_league)
+pats = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+jags = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+browns = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
 
 # CREATE USERTEAMS (JOIN TABLE)
-UserTeam.create(user: greg, team: pats)
-UserTeam.create(user: greg, team: jags)
-UserTeam.create(user: arren, team: pats)
-UserTeam.create(user: arren, team: browns)
-UserTeam.create(user: forrest, team: browns)
-UserTeam.create(user: forrest, team: pats)
-UserTeam.create(user: harrison, team: browns)
-UserTeam.create(user: harrison, team: jags)
-UserTeam.create(user: eva, team: pats)
-UserTeam.create(user: eva, team: jags)
+10.times do
+  UserTeam.create(user: User.all.sample, team: Team.all.sample)
+end
 
-
+categories = %w(cardio yoga health weightlifting miscellaneous mindfullness)
 
 # CREATE WORKOUTS
-# yoga
-downward_dog = Workout.create(name: 'Downward Dog', description: 'face down but up')
-chair_pose = Workout.create(name: 'Chair Pose', description: 'Like your in a chair but with no chair')
-eagle_pose = Workout.create(name: 'Eagle Pose', description: 'Americas Bird')
-gate_pose = Workout.create(name: 'Gate Pose', description: 'Open up your gate')
+20.times do
+  Workout.create(
+    name: Faker::Esport.game,
+    description: Faker::HowIMetYourMother.quote,
+    default_points: rand(0..100),
+    image_url: Faker::Fillmurray.image,
+    category: categories.sample
+  )
+end
 # Cardio
 # run = Workout.create(name: '30min Run', description: 'run forrest run')
 # stairs = Workout.create(name: 'Stair Master', description: 'master the simple things')
@@ -60,16 +79,35 @@ gate_pose = Workout.create(name: 'Gate Pose', description: 'Open up your gate')
 
 
 # CREATE WORKOUTPACKS (JOIN TABLE)
-WorkoutPack.create(pack: yoga, workout: downward_dog)
+10.times do
+  WorkoutPack.create(pack: Pack.all.sample, workout: Workout.all.sample, points: rand(0..100))
+end
 # need to be able to have the same workout multiple times in a pack....Completions needs to reference workout_pack not just workout
-WorkoutPack.create(pack: yoga, workout: chair_pose)
-WorkoutPack.create(pack: yoga, workout: chair_pose)
-WorkoutPack.create(pack: yoga, workout: eagle_pose)
-WorkoutPack.create(pack: yoga, workout: gate_pose)
+
 
 # CREATE COMPLETIONS - TEST 1
 
 # Completion.create(user: greg, team: pats, workout: downward_dog, workout_pack_id: 1, points: 100, status: 'claimed')
 # Completion.create(user: greg, team: pats, workout: chair_pose, workout_pack_id: 2, points: 150, status: 'claimed')
-Completion.create(user: greg, team: pats, workout_pack_id: 1, points: 100, status: 'claimed')
-Completion.create(user: greg, team: pats, workout_pack_id: 2, points: 150, status: 'claimed')
+20.times do
+  Completion.create(user: User.all.sample, team: Team.all.sample, workout_pack: WorkoutPack.all.sample, league_pack: LeaguePack.all.sample, completed: false)
+end
+
+# CREATE EXERCISES
+30.times do
+  Exercise.create(
+    name: Faker::Esport.game,
+    description: Faker::HowIMetYourMother.quote,
+    tutorial: Faker::HowIMetYourMother.quote,
+    image_url: Faker::LoremPixel.image,
+    category: categories.sample
+  )
+end
+
+# CREATE WORKOUT_EXCERSISES
+  40.times do
+    WorkoutExercise.create(
+      workout: Workout.all.sample,
+      exercise: Exercise.all.sample
+    )
+  end

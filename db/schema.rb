@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_021704) do
+ActiveRecord::Schema.define(version: 2018_10_12_005839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,21 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
   create_table "completions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "team_id"
-    t.integer "workout_id"
-    t.integer "points"
-    t.string "status"
+    t.integer "workout_pack_id"
+    t.integer "league_pack_id"
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "workout_pack_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "tutorial"
+    t.string "image_url"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "league_packs", force: :cascade do |t|
@@ -35,12 +44,19 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
+    t.string "description"
+    t.string "motto"
+    t.integer "number_of_teams"
+    t.integer "roster_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "packs", force: :cascade do |t|
     t.string "name"
+    t.string "description"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
     t.integer "league_id"
     t.string "name"
     t.string "motto"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,8 +78,20 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
     t.string "email"
+    t.string "avatar"
+    t.string "bio"
+    t.string "tagline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workout_exercises", force: :cascade do |t|
+    t.integer "workout_id"
+    t.integer "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
   create_table "workout_packs", force: :cascade do |t|
     t.integer "pack_id"
     t.integer "workout_id"
+    t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +107,9 @@ ActiveRecord::Schema.define(version: 2018_10_04_021704) do
   create_table "workouts", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "default_points"
+    t.string "image_url"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
