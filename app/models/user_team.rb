@@ -1,4 +1,4 @@
 class UserTeam < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :team, dependent: :destroy
+  belongs_to :user
+  belongs_to :team
 end

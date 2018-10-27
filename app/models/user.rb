@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :user_teams
+  has_many :user_teams, dependent: :destroy
   has_many :teams, through: :user_teams
   has_many :completions
   # has_many :workout_packs, through: :completions
