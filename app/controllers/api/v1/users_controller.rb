@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
   def index
     @users = User.all#.map {|user| user.format_json}
     # deciding whether or not to use the serializer for data loading
-    users = UserSerializer.new(@users).serialized_json
+    users = UserSerializer.new(@users, { is_collection: true }).serialized_json
     render json: users
   end
 
