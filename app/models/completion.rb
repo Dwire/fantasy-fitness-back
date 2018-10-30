@@ -6,13 +6,19 @@ class Completion < ApplicationRecord
   belongs_to :league_pack
 
   def format_json
-    { id: self.id,
+    {
+      id: self.id,
       user_id: self.user_id,
       team_id: self.team_id,
       workout_pack_id: self.workout_pack_id,
       completed: self.completed,
-      league_pack_id: self.league_pack_id
+      league_pack_id: self.league_pack_id,
+      points: self.points_scored
     }
+  end
+
+  def points_scored
+    self.workout_pack.points
   end
 
 
