@@ -9,8 +9,8 @@ class Completion < ApplicationRecord
     {
       id: self.id,
       user_id: self.user_id,
-      team_id: self.team_id,
-      workout_pack_id: self.workout_pack_id,
+      team_name: self.team_name,
+      workout: self.workout,
       completed: self.completed,
       league_pack_id: self.league_pack_id,
       points: self.points_scored
@@ -21,6 +21,13 @@ class Completion < ApplicationRecord
     self.workout_pack.points
   end
 
+  def team_name
+    self.team.name
+  end
+
+  def workout
+    self.workout_pack.workout
+  end
 
   # def user_points
     # want to have

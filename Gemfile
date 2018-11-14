@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # ActiveModel serializers
-# gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'fast_jsonapi'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
