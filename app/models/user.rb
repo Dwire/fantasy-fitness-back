@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :completions
   # has_many :workout_packs, through: :completions
   # find a way to get workouts
+  validates :username, uniqueness: true
+  has_secure_password
 
   def workouts
     self.completions.map do |completion|

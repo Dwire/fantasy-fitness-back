@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :packs, only: [:index, :create, :show]
       resources :workouts, only: [:index, :show]
       resources :completions, only: [:create, :update]
+      post '/login', to: 'sessions#create'
+      post '/reauth', to: 'sessions#reauth'
     end
   end
 end
