@@ -7,6 +7,7 @@ class UserSerializer
     user.completions.map {|completion| completion.format_json }
   end
 
+
   attribute :teams do |user|
     user.teams.map {|team| team.format_json }
   end
