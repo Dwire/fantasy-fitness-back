@@ -16,6 +16,13 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    if params[:avatar]
+      cloud = User.save_it(params[:avatar])
+      user.avatar = cloud['url']
+    else
+      user.avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9wJpJ_lzaO39aKPvLnJiT7oS9RueUTUzxIRr7F7BKb2mbZC8"
+    end
+    
     if user.save
        token = encode_token({user_id: user.id})
       render json: {user: UserSerializer.new(user).serializable_hash, jwt: token}
