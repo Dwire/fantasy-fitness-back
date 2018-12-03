@@ -1,6 +1,7 @@
 class Api::V1::TeamsController < ApplicationController
 
   before_action :get_team, only: [:show, :update, :destroy]
+  skip_before_action :authorized, only: [:create, :index]
 
   def index
     render json: Team.all

@@ -28,7 +28,8 @@ WorkoutExercise.destroy_all
     email: Faker::Internet.email,
     avatar: Faker::Avatar.image,
     bio: Faker::HarryPotter.quote,
-    tagline: Faker::NewGirl.quote
+    tagline: Faker::NewGirl.quote,
+    password: 'pass123',
   )
 end
 
