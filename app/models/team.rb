@@ -7,11 +7,12 @@ class Team < ApplicationRecord
   def format_json
     {
       id: self.id,
-      league_id: self.league_id,
+      # league_id: self.league_id,
       name: self.name,
       motto: self.motto,
       image_url: self.image_url,
-      teammates: self.users
+      teammates: self.users,
+      league: self.league
     }
   end
 end
