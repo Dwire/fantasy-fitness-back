@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   before_action :get_user, only: [:show, :destroy, :update]
+  skip_before_action :authorized, only: [:create, :index]
 
   def index
     @users = User.all#.map {|user| user.format_json}
@@ -15,8 +16,16 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    if params[:avatar]
+      cloud = User.save_it(params[:avatar])
+      user.avatar = cloud['url']
+    else
+      user.avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9wJpJ_lzaO39aKPvLnJiT7oS9RueUTUzxIRr7F7BKb2mbZC8"
+    end
+    
     if user.save
-      render json: UserSerializer.new(user).serialized_json
+       token = encode_token({user_id: user.id})
+      render json: {user: UserSerializer.new(user).serializable_hash, jwt: token}
     else
       render json: { message: 'Sorry, the user could not be saved!', errors: user.errors.full_messages }
     end
@@ -46,7 +55,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.permit(:username, :email, :password, :password_confirmation)
   end
 
 end

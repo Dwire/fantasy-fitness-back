@@ -11,6 +11,10 @@ class UserSerializer
     user.teams.map {|team| team.format_json }
   end
 
+  attribute :leagues do |user|
+    user.teams.map {|team| team.league.format_json} 
+  end
+
   # attribute :points_scored
 
 

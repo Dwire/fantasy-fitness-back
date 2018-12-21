@@ -24,21 +24,21 @@ class Api::V1::CompletionsController < ApplicationController
 
   def update
     @completion = Completion.find(params[:id])
-    @completion.update(status: params[:status])
+    @completion.update(completed: completion_params[:completed])
     render json: @completion.format_json
   end
 
   private
 
   def completion_params
-    params.require(:completion).permit(:user_id, :team_id, :workout_pack_id, :points, :league_pack_id)
+    params.require(:completion).permit(:user_id, :team_id, :workout_pack_id, :points, :league_pack_id, :completed)
   end
 
   def check_for_existing
     # checks to ensure a completion can only be done once
     # for each workout in a league_pack in a given week (in each league_pack)
     @completion = Completion.find_by(team_id: completion_params[:team_id],
-      workout_pack_id: completion_params[:workout_pack_id])
+      workout_pack_id: completion_params[:workout_pack_id],
       league_pack_id: completion_params[:league_pack_id]
     )
   end

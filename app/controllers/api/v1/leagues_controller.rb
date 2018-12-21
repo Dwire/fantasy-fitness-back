@@ -1,5 +1,7 @@
 class Api::V1::LeaguesController < ApplicationController
 
+  before_action :get_leauge, only: [:show, :update, :destroy]
+
   def index
     render json: League.all
   end
