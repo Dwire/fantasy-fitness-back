@@ -1,6 +1,6 @@
 class Api::V1::LeaguesController < ApplicationController
-
-  before_action :get_leauge, only: [:show, :update, :destroy]
+  skip_before_action :authorized, only: [:index]
+  before_action :get_league, only: [:show, :update, :destroy]
 
   def index
     render json: League.all
@@ -33,7 +33,7 @@ class Api::V1::LeaguesController < ApplicationController
 
   private
 
-  def get_leauge
+  def get_league
     @league = League.find(params[:id])
   end
 
