@@ -12,7 +12,7 @@ class Team < ApplicationRecord
       motto: self.motto,
       image_url: self.image_url,
       teammates: self.users,
-      league: self.league
+      league: self.league,
     }
   end
 end

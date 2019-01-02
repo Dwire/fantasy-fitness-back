@@ -13,7 +13,10 @@ class League < ApplicationRecord
       motto: self.motto,
       number_of_teams: self.number_of_teams,
       roster_size: self.roster_size,
-      teams: self.teams
+      teams: self.teams,
+      league_packs: self.packs.map do |pack|
+        pack.format_json
+      end
     }
   end
 
