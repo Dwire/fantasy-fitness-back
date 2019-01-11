@@ -1,5 +1,6 @@
 class Api::V1::PacksController < ApplicationController
-
+  skip_before_action :authorized, only: [:index]
+  
   def index
     render json: Pack.all
   end

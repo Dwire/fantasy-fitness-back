@@ -1,6 +1,7 @@
 class Api::V1::WorkoutsController < ApplicationController
 
   before_action :get_workout, only: [:show]
+  skip_before_action :authorized, only: [:index]
 
   def index
     @workouts = Workout.all
