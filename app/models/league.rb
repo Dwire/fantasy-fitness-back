@@ -14,9 +14,8 @@ class League < ApplicationRecord
       number_of_teams: self.number_of_teams,
       roster_size: self.roster_size,
       teams: self.teams,
-      workout_packs: self.packs.map do |pack|
-        pack.format_json
-      end
+      packs: self.packs.map {|pack| pack.format_json},
+      league_packs: self.league_packs.map {|league_pack| league_pack.format_json}
     }
   end
 

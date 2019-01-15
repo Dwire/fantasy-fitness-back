@@ -13,6 +13,7 @@ class Team < ApplicationRecord
       image_url: self.image_url,
       teammates: self.users,
       league: self.league,
+      completions: self.completions
     }
   end
 end

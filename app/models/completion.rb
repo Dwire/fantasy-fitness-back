@@ -2,7 +2,7 @@ class Completion < ApplicationRecord
   # belongs_to :workout
   belongs_to :user
   belongs_to :team
-  belongs_to :workout_pack
+  belongs_to :workout_pack, optional: true #why did we need this?
   belongs_to :league_pack
 
   def format_json
