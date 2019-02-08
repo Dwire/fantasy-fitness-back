@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if params[:avatar]
-      cloud = User.save_it(params[:avatar])
+      cloud = user.save_it(params[:avatar])
       user.avatar = cloud['url']
     else
       user.avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9wJpJ_lzaO39aKPvLnJiT7oS9RueUTUzxIRr7F7BKb2mbZC8"
