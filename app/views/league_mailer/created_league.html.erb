@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for creating a new league on Fantasy Fitness, <%= @user.first_name %>!</h1>
+    <img class='email-img' src="<%= @league.image_url %>"/>
+    <p><%= @league.name %> is ready to go! </p>
+    <p>We've created <%= @league.number_of_teams %> teams for you</p>
+    <h2>What's next? </h2>
+    <p>Invite friends to join, start picking out workouts, and get FIT!</p>
+    <br>
+    <p>Stay strong!</p>
+    <p>Fantasy Fitness</p>
+  </body>
+</html>

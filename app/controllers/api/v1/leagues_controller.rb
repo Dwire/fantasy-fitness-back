@@ -25,8 +25,11 @@ class Api::V1::LeaguesController < ApplicationController
     end
       # sending email with action mailer
     if league.save
-      LeagueMailer.with(user: user, league: league).welcome_email.deliver_later
-      render json: league
+      league.build_teams
+      user.teams << league.teams.first
+      # send the welcome email
+      # LeagueMailer.with(user: user, league: league).created_league.deliver_later
+      render json: { league: league, teams: league.teams }
     else
       render json: { message: "Sorry, could not create league", errors: league.errors.full_messages }
     end
