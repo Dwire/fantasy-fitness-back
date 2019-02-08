@@ -4,14 +4,13 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Fantasy Fitness, Arren!</h1>
+    <h1>Welcome to Fantasy Fitness, Greg!</h1>
     <p>
-      You received this email because someone invited you to join their league!
-      your current info is: idk yet... <br>
+      You received this email because someone invited you to join their league, <%= @league.name %>!
     </p>
-    <p>
-      To sign up for an account, just follow this link:
-    </p>
+    <img class="email-img" src="<%= @league.image_url %>" />
+    <br>
     <p>Thanks for joining and have a great day!</p>
+    <p>Fantasy Fitness</p>
   </body>
 </html>

@@ -13,8 +13,11 @@ class Api::V1::LeaguesController < ApplicationController
   def create
     # think about authorization as well!
     user = current_user
+    # need to have the user be a member of the league
+    # create a new team for that league AND add user to that new team
+
     league = League.new(league_params)
-    if params[:avatar]
+    if params[:image_url]
       cloud = league.save_it(params[:image_url])
       league.image_url = cloud['url']
     else
@@ -22,7 +25,7 @@ class Api::V1::LeaguesController < ApplicationController
     end
       # sending email with action mailer
     if league.save
-      # LeagueMailer.with(user: user, league: league).welcome_email.deliver_later
+      LeagueMailer.with(user: user, league: league).welcome_email.deliver_later
       render json: league
     else
       render json: { message: "Sorry, could not create league", errors: league.errors.full_messages }
