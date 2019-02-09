@@ -54,7 +54,7 @@ class Api::V1::LeaguesController < ApplicationController
   end
 
   def league_params
-    params.permit(:name, :description, :motto, :number_of_teams, :roster_size )
+    params.permit(:name, :description, :motto, :number_of_teams, :roster_size, :passcode)
   end
 
 end
