@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @name %>!</h1>
+    <h3><%= @c_user.first_name %> is inviting you to join their league on Fantasy Fitness!</h3>
+    <img class='email-img' src="<%= @league.image_url %>"/>
+
+    <h3>Sign up here</h3>
+    <h4>Remember to fill in the league's passcode: <%= @league.passcode %></h4>
+    <br>
+    <p>Stay strong!</p>
+    <p>Fantasy Fitness</p>
+  </body>
+</html>

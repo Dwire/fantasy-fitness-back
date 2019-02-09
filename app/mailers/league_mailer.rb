@@ -7,9 +7,11 @@ class LeagueMailer < ApplicationMailer
   end
 
   def league_invite
-    @user = params[:user]
+    @email = params[:email]
+    @name = params[:name]
     @league = params[:league]
-    mail(to: 'aralx73@gmail.com', subject: 'Welcome to Fantasy Fitness')
+    @c_user = params[:c_user]
+    mail(to: @email, subject: 'Join My League!')
   end
 
 end

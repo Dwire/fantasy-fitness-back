@@ -9,6 +9,11 @@ class League < ApplicationRecord
     end
   end
 
+  def generate_passcode
+    passcode = rand(36**14).to_s(36)
+    self.passcode = passcode
+  end
+
   def format_json
     {
       id: self.id,
@@ -18,7 +23,8 @@ class League < ApplicationRecord
       motto: self.motto,
       number_of_teams: self.number_of_teams,
       roster_size: self.roster_size,
-      teams: self.teams
+      teams: self.teams.map { |team| team.format_json },
+      passcode: self.passcode
     }
   end
 
