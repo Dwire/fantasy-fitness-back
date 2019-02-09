@@ -3,4 +3,8 @@ class LeagueMailerPreview < ActionMailer::Preview
   def created_league
     LeagueMailer.with(user: User.first, league: League.last).created_league
   end
+
+  def league_invite
+    LeagueMailer.with(name: "Arren", email: "test@asdf.com", league: League.last, c_user: User.first).league_invite
+  end
 end

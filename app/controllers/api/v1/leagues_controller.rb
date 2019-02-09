@@ -1,6 +1,6 @@
 class Api::V1::LeaguesController < ApplicationController
 
-  before_action :get_league, only: [:show, :update, :destroy]
+  before_action :get_league, only: [:show, :update, :destroy, :invite]
 
   def index
     render json: League.all
@@ -10,6 +10,15 @@ class Api::V1::LeaguesController < ApplicationController
     render json: @league
   end
 
+  def invite
+    c_user = current_user
+    params["_json"].each do |invite|
+      # NOTE: uncomment below to send emails every time someone gets invited to the league!!!!
+      # LeagueMailer.with(name: invite[:name], email: invite[:email], league: @league, c_user: c_user).league_invite.deliver_later
+    end
+    render json: { message: "Invitations successfully sent!" }
+  end
+
   def create
     # think about authorization as well!
     user = current_user
@@ -17,6 +26,7 @@ class Api::V1::LeaguesController < ApplicationController
     # create a new team for that league AND add user to that new team
 
     league = League.new(league_params)
+    league.generate_passcode
     if params[:image_url]
       cloud = league.save_it(params[:image_url])
       league.image_url = cloud['url']

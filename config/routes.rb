@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :completions, only: [:create, :update]
       post '/login', to: 'sessions#create'
       post '/reauth', to: 'sessions#reauth'
+      post '/leagues/:id/invite', to: 'leagues#invite'
     end
   end
 end
