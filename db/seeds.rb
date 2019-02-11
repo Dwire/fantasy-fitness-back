@@ -64,15 +64,32 @@ end
 categories = %w(cardio yoga health weightlifting miscellaneous mindfullness)
 
 # CREATE WORKOUTS
-20.times do
-  Workout.create(
-    name: Faker::Esport.game,
-    description: Faker::HowIMetYourMother.quote,
+
+squats = Workout.create(
+    name: "Barbell Squats",
+    description: "5 sets of 5 reps",
     default_points: rand(0..100),
-    image_url: Faker::Fillmurray.image,
-    category: categories.sample
+    image_url: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+    category: 'weightlifting'
   )
-end
+
+deadlifts = Workout.create(
+    name: "Barbell Deadlifts",
+    description: "3 sets of 3 reps",
+    default_points: rand(0..100),
+    image_url: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+    category: 'weightlifting'
+  )
+
+stairs = Workout.create(
+    name: "Stair Run",
+    description: "deadlifts, hip raises, straight leg deadlifts, good mornings, step ups",
+    default_points: rand(0..100),
+    image_url: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+    category: 'weightlifting'
+  )
+
+
 # Cardio
 # run = Workout.create(name: '30min Run', description: 'run forrest run')
 # stairs = Workout.create(name: 'Stair Master', description: 'master the simple things')
