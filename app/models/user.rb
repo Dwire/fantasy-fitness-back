@@ -17,7 +17,16 @@ class User < ApplicationRecord
   # validates :name, presence: true
 
   def format_json
-    { id: self.id, email: self.email }
+    {
+      id: self.id,
+      email: self.email,
+      username: self.username,
+      first_name: self.first_name,
+      last_name: self.last_name,
+      tagline: self.tagline,
+      bio: self.bio,
+      avatar: self.avatar
+    }
   end
 
   # def weekly_points
