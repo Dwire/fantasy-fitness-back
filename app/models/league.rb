@@ -14,6 +14,15 @@ class League < ApplicationRecord
     self.passcode = passcode
   end
 
+  def selected_pack
+    if self.selected_pack_id
+      pack = Pack.find(self.selected_pack_id)
+      PackSerializer.new(pack).serializable_hash
+    else
+      {}
+    end
+  end
+
   def format_json
     {
       id: self.id,
@@ -27,7 +36,12 @@ class League < ApplicationRecord
       teams: self.teams.map { |team| team.format_json },
       passcode: self.passcode,
       packs: self.packs.map {|pack| pack.format_json},
-      current_pack: self.packs.last
+      selected_pack: self.selected_pack
+
+      # #Does selected_pack replace and teams replace these
+      # current_pack: self.packs.last
+      # teams: self.teams,
+
     }
   end
 

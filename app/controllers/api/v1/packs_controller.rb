@@ -1,9 +1,9 @@
 class Api::V1::PacksController < ApplicationController
   skip_before_action :authorized, only: [:index]
-  
+
   def index
-    @packs = Pack.all
-    render json: PackSerializer.new(@packs).serialized_json
+    packs = Pack.all
+    render json: PackSerializer.new(packs).serialized_json
   end
 
   def show
