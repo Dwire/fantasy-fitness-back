@@ -20,18 +20,29 @@ WorkoutExercise.destroy_all
 # robin = User.create(name: 'Robin', email: 'rw@gmail.com')
 # eva = User.create(name: 'Eva', email: 'ed@gmail.com')
 
-# 10.times do
-#   User.create(
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     username: Faker::Internet.username(5..8),
-#     email: Faker::Internet.email,
-#     avatar: Faker::Avatar.image,
-#     bio: Faker::HarryPotter.quote,
-#     tagline: Faker::NewGirl.quote,
-#     password: 'pass123',
-#   )
-# end
+User.create(
+  first_name: 'Gregory',
+  last_name: 'Dwyer',
+  username: 'Dwire',
+  email: 'g@g.com',
+  avatar: 'http://www.bandt.com.au/information/uploads/2016/11/Dodgeball-1920-Everett.jpg',
+  bio: 'Gym Class Hero',
+  tagline: 'I Lift Things Up and I Put Them Down',
+  password: 'pass123',
+)
+
+10.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    username: Faker::Internet.username(5..8),
+    email: Faker::Internet.email,
+    avatar: Faker::Avatar.image,
+    bio: Faker::HarryPotter.quote,
+    tagline: Faker::NewGirl.quote,
+    password: 'pass123',
+  )
+end
 
 # CREATE LEAGUES
 # ff_league = League.create(
