@@ -1,6 +1,7 @@
 class Api::V1::LeaguesController < ApplicationController
+
+  before_action :get_league, only: [:show, :update, :destroy, :invite]
   skip_before_action :authorized, only: [:index]
-  before_action :get_league, only: [:show, :update, :destroy]
 
   def index
     render json: League.all
@@ -10,10 +11,36 @@ class Api::V1::LeaguesController < ApplicationController
     render json: @league
   end
 
+  def invite
+    c_user = current_user
+    params["_json"].each do |invite|
+      # NOTE: uncomment below to send emails every time someone gets invited to the league!!!!
+      # LeagueMailer.with(name: invite[:name], email: invite[:email], league: @league, c_user: c_user).league_invite.deliver_later
+    end
+    render json: { message: "Invitations successfully sent!" }
+  end
+
   def create
+    # think about authorization as well!
+    user = current_user
+    # need to have the user be a member of the league
+    # create a new team for that league AND add user to that new team
+
     league = League.new(league_params)
+    league.generate_passcode
+    if params[:image_url]
+      cloud = league.save_it(params[:image_url])
+      league.image_url = cloud['url']
+    else
+      league.image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt9wJpJ_lzaO39aKPvLnJiT7oS9RueUTUzxIRr7F7BKb2mbZC8"
+    end
+      # sending email with action mailer
     if league.save
-      render json: league
+      league.build_teams
+      user.teams << league.teams.first
+      # send the welcome email
+      # LeagueMailer.with(user: user, league: league).created_league.deliver_later
+      render json: { league: league, teams: league.teams }
     else
       render json: { message: "Sorry, could not create league", errors: league.errors.full_messages }
     end
@@ -38,7 +65,7 @@ class Api::V1::LeaguesController < ApplicationController
   end
 
   def league_params
-    params.require(:league).permit(:name)
+    params.permit(:name, :description, :motto, :number_of_teams, :roster_size, :passcode)
   end
 
 end

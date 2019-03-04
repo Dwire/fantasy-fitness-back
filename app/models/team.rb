@@ -11,8 +11,9 @@ class Team < ApplicationRecord
       name: self.name,
       motto: self.motto,
       image_url: self.image_url,
-      teammates: self.users,
-      league: self.league
+      teammates: self.users.map {|teammate| teammate.format_json },
+      league: self.league,
+      completions: self.completions
     }
   end
 end

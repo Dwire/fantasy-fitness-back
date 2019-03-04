@@ -17,52 +17,20 @@ class User < ApplicationRecord
   # validates :name, presence: true
 
   def format_json
-    { id: self.id, email: self.email }
+    {
+      id: self.id,
+      email: self.email,
+      username: self.username,
+      first_name: self.first_name,
+      last_name: self.last_name,
+      tagline: self.tagline,
+      bio: self.bio,
+      avatar: self.avatar
+    }
   end
 
   # def weekly_points
     # how many points have i scored? through completions
   # end
-
-
-  @@secret = {
-    api_key: ENV['API_KEY'],
-    api_secret: ENV['API_SECRET'],
-    cloud_name: 'crowd-capsule'
-  }
-
-  @@big_secret = {
-    api_key: ENV['API_KEY'],
-    api_secret: ENV['API_SECRET'],
-    cloud_name: 'crowd-capsule',
-    resource_type: :video,
-    chunk_size: 6_000_000
-  }
-
-  def self.save_it(file)
-    if file.size <= 1000000 && !file.content_type.include?("video")
-      self.save_to_cloud(file)
-    else
-      self.big_save(file.tempfile.path)
-    end
-  end
-
-  def self.save_to_cloud(file)
-    Cloudinary::Uploader.upload(file, self.secret)
-  end
-
-  def self.big_save(file)
-    Cloudinary::Uploader.upload(file, self.big_secret)
-  end
-
-  private
-
-  def self.secret
-    @@secret
-  end
-
-  def self.big_secret
-    @@big_secret
-  end
 
 end
