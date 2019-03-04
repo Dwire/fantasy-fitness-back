@@ -37,7 +37,8 @@ class Api::V1::CompletionsController < ApplicationController
   def check_for_existing
     # checks to ensure a completion can only be done once
     # for each workout in a league_pack in a given week (in each league_pack)
-    @completion = Completion.find_by(team_id: completion_params[:team_id],
+    @completion = Completion.find_by(
+      team_id: completion_params[:team_id],
       workout_pack_id: completion_params[:workout_pack_id],
       league_pack_id: completion_params[:league_pack_id]
     )
