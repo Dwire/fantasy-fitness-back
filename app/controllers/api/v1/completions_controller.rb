@@ -2,10 +2,13 @@ class Api::V1::CompletionsController < ApplicationController
 
   before_action :check_for_existing, only: [:create]
 
+  # skipping loggin action/warning for testing purposes
+  skip_before_action :authorized, only: [:create]
+
   def create
     if !@completion
       completion = Completion.new(completion_params)
-      completion.status = "claimed"
+      # completion.status = "claimed"
       if completion.save
         render json: completion.format_json
       else

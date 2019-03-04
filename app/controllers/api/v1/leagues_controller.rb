@@ -1,6 +1,7 @@
 class Api::V1::LeaguesController < ApplicationController
 
   before_action :get_league, only: [:show, :update, :destroy, :invite]
+  skip_before_action :authorized, only: [:index]
 
   def index
     render json: League.all
