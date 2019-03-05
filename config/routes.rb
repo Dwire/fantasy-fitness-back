@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post '/login', to: 'sessions#create'
       post '/reauth', to: 'sessions#reauth'
       post '/leagues/:id/invite', to: 'leagues#invite'
+      post '/teams/:id/join', to: 'teams#join'
     end
   end
 end
