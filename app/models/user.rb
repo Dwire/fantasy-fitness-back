@@ -29,6 +29,12 @@ class User < ApplicationRecord
     }
   end
 
+  def league_code=(passcode)
+    league = League.find_by(passcode: passcode)
+    team = league.find_available_team
+    self.teams << team
+  end
+
   # def weekly_points
     # how many points have i scored? through completions
   # end

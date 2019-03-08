@@ -16,4 +16,8 @@ class Team < ApplicationRecord
       completions: self.completions
     }
   end
+
+  def not_full(roster_size)
+    self.users.length < roster_size
+  end
 end
