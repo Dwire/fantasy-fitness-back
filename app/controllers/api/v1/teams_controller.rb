@@ -29,6 +29,16 @@ class Api::V1::TeamsController < ApplicationController
     end
   end
 
+  def join
+    team = Team.find(params[:id])
+    user = current_user
+    if UserTeam.create(user: user, team: team)
+      render json: { message: 'Successfully joined team!', team: team, user: user }
+    else
+      render json: { message: 'Sorry, could not join the team' }
+    end
+  end
+
   def destroy
     if @team.destroy
       render json: { message: 'Successfully deleted team' }

@@ -7,9 +7,11 @@ Rails.application.routes.draw do
       resources :packs, only: [:index, :create, :show]
       resources :workouts, only: [:index, :show]
       resources :completions, only: [:create, :update]
+      resources :exercises, only: [:index]
       post '/login', to: 'sessions#create'
       post '/reauth', to: 'sessions#reauth'
       post '/leagues/:id/invite', to: 'leagues#invite'
+      post '/teams/:id/join', to: 'teams#join'
     end
   end
 end

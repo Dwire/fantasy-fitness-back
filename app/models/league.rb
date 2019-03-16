@@ -41,8 +41,11 @@ class League < ApplicationRecord
       # #Does selected_pack replace and teams replace these
       # current_pack: self.packs.last
       # teams: self.teams,
-
     }
+  end
+
+  def find_available_team
+    self.teams.find {|team| team.not_full(self.roster_size) }
   end
 
 end
