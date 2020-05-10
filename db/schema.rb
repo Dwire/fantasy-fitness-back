@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.integer "team_id"
     t.integer "workout_pack_id"
     t.integer "league_pack_id"
-    t.boolean "completed"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.integer "roster_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "passcode"
     t.integer "selected_pack_id"
+    t.string "passcode"
   end
 
   create_table "packs", force: :cascade do |t|

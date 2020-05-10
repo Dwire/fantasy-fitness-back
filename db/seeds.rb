@@ -1,12 +1,12 @@
 #
-# User.destroy_all
-# Team.destroy_all
-# UserTeam.destroy_all
-# League.destroy_all
+User.destroy_all
+Team.destroy_all
+UserTeam.destroy_all
+League.destroy_all
 LeaguePack.destroy_all
 Workout.destroy_all
 WorkoutPack.destroy_all
-# Completion.destroy_all
+Completion.destroy_all
 Pack.destroy_all
 Exercise.destroy_all
 WorkoutExercise.destroy_all
@@ -20,7 +20,8 @@ WorkoutExercise.destroy_all
 # robin = User.create(name: 'Robin', email: 'rw@gmail.com')
 # eva = User.create(name: 'Eva', email: 'ed@gmail.com')
 
-User.create(
+puts '...creating Greg'
+greg = User.create(
   first_name: 'Gregory',
   last_name: 'Dwyer',
   username: 'Dwire',
@@ -31,48 +32,57 @@ User.create(
   password: 'pass123',
 )
 
+puts '...creating other users'
 10.times do
   User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    username: Faker::Internet.username(5..8),
+    username: Faker::Name.initials,
     email: Faker::Internet.email,
     avatar: Faker::Avatar.image,
-    bio: Faker::HarryPotter.quote,
-    tagline: Faker::NewGirl.quote,
+    bio: Faker::Movies::HarryPotter.quote,
+    tagline: Faker::TvShows::NewGirl.quote,
     password: 'pass123',
   )
 end
 
 # CREATE LEAGUES
-# ff_league = League.create(
-#   name: 'Fantasy Fitness League',
-#   image_url: Faker::Avatar.image,
-#   description: Faker::Movie.quote,
-#   motto: Faker::GameOfThrones.quote,
-#   number_of_teams: 10,
-#   roster_size: 3
-# )
+puts '...creating leagues'
+ff_league = League.create(
+  name: 'Fantasy Fitness League',
+  image_url: Faker::Avatar.image,
+  description: Faker::Movie.quote,
+  motto: Faker::TvShows::GameOfThrones.quote,
+  number_of_teams: 10,
+  roster_size: 3
+)
 
 # CREATE PACKS
+puts '...creating packs'
 yoga = Pack.create(name: 'Yoga Pack', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
 cardio = Pack.create(name: 'Cardio', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
 
-# CREATE LEAGUE_PACKS
-# lp1 = LeaguePack.create(league: ff_league, pack: yoga)
-# lp2 = LeaguePack.create(league: ff_league, pack: cardio)
+
 
 # CREATE TEAMS
-# pats = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
-# jags = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
-# browns = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+puts '...creating Teams'
+pats = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+jags = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+browns = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
 
 # CREATE USERTEAMS (JOIN TABLE)
-# 10.times do
-#   UserTeam.create(user: User.all.sample, team: Team.all.sample)
-# end
+puts '...creating Greg on a UserTeam'
+UserTeam.create(user: greg, team: Team.all.sample )
 
-categories = %w(Cardio Yoga Health Weightlifting Mindfullness Core Back Legs Chest Arms)
+puts '...creating UserTeams'
+10.times do
+  UserTeam.create(user: User.all.sample, team: Team.all.sample)
+end
+
+
+
+
+# categories = %w(Cardio Yoga Health Weightlifting Mindfullness Core Back Legs Chest Arms)
 
 # name
 # description
@@ -197,5 +207,23 @@ first_pack = Pack.create(
   image_url: "https://www.wellandgood.com/wp-content/uploads/2018/01/instagram-base-body-babes-sumo-squat.jpg"
 )
 
+50.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: Pack.all.sample, points: rand(1..5))
+end
 
 League.last.packs.push(first_pack)
+
+# debugger
+# CREATE LEAGUE_PACKS
+puts '...creating LeaguePacks'
+lp1 = LeaguePack.create(league: ff_league, pack: yoga)
+lp2 = LeaguePack.create(league: ff_league, pack: cardio)
+lp3 = LeaguePack.create(league: ff_league, pack: first_pack)
+
+
+# CREATE COMPLETIONS
+puts '...creating Completions'
+statuses = ['claimed', 'completed', 'open']
+50.times do 
+  Completion.create(user: User.all.sample, team: Team.all.sample, workout_pack: WorkoutPack.all.sample, league_pack: LeaguePack.all.sample, status: statuses.sample)
+end 
