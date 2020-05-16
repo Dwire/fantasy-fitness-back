@@ -3,6 +3,9 @@ class League < ApplicationRecord
   has_many :league_packs, dependent: :destroy
   has_many :packs, through: :league_packs
 
+  has_many :league_messages
+  # has_many :users, through: :league_messages
+
   def build_teams
     self.number_of_teams.times do |num|
       team = Team.create(name: "Team #{num}", league: self, image_url: "https://cdn-ami-drupal.heartyhosting.com/sites/muscleandfitness.com/modules/custom/maf_nodes/images/exercises/exercise_default.png" )

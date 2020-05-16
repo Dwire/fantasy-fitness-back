@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_09_004934) do
+ActiveRecord::Schema.define(version: 2020_05_15_002026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "workout_id"
   end
 
   create_table "exercises", force: :cascade do |t|
@@ -33,6 +34,16 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "league_messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "league_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_league_messages_on_league_id"
+    t.index ["user_id"], name: "index_league_messages_on_user_id"
   end
 
   create_table "league_packs", force: :cascade do |t|
@@ -61,6 +72,16 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "team_messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_messages_on_team_id"
+    t.index ["user_id"], name: "index_team_messages_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -117,4 +138,8 @@ ActiveRecord::Schema.define(version: 2019_02_09_004934) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "league_messages", "leagues"
+  add_foreign_key "league_messages", "users"
+  add_foreign_key "team_messages", "teams"
+  add_foreign_key "team_messages", "users"
 end

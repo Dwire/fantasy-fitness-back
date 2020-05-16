@@ -4,6 +4,9 @@ class Team < ApplicationRecord
   belongs_to :league#, dependent: :destroy
   has_many :completions
 
+  has_many :team_messages
+  # has_many :user_messages, through: :team_messages, source: :user
+
   def format_json
     {
       id: self.id,

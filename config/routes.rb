@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :league_messages
+  resources :team_messages
   namespace :api do
     namespace :v1 do
       resources :leagues, except: [:new, :edit]
