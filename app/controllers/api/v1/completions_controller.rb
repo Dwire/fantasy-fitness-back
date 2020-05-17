@@ -25,6 +25,14 @@ class Api::V1::CompletionsController < ApplicationController
     end
   end
 
+  def destroy 
+    completion = Completion.find(params[:id])
+    completion.destroy
+    render json: {
+      message: 'Completion has been destroyed'
+    }
+  end 
+
   def update
     @completion = Completion.find(params[:id])
     @completion.update(completed: completion_params[:completed])

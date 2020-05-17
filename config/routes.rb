@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :teams, except: [:new, :edit]
       resources :packs, only: [:index, :create, :show]
       resources :workouts, only: [:index, :show]
-      resources :completions, only: [:create, :update]
+      resources :completions, only: [:create, :update, :destroy]
       post '/login', to: 'sessions#create'
       post '/reauth', to: 'sessions#reauth'
       post '/leagues/:id/invite', to: 'leagues#invite'

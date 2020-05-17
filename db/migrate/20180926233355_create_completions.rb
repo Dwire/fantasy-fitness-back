@@ -5,7 +5,7 @@ class CreateCompletions < ActiveRecord::Migration[5.2]
       t.integer :team_id
       t.integer :workout_pack_id
       t.integer :league_pack_id
-      t.string :status
+      t.string :status, default: "open"
 
       t.timestamps
     end

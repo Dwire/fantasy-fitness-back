@@ -11,7 +11,7 @@ class Completion < ApplicationRecord
       user_id: self.user_id,
       team_name: self.team_name,
       workout: self.workout,
-      completed: self.status,
+      status: self.status,
       league_pack_id: self.league_pack_id,
       points: self.points_scored
     }
