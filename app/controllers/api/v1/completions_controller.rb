@@ -34,15 +34,16 @@ class Api::V1::CompletionsController < ApplicationController
   end 
 
   def update
+    # byebug
     @completion = Completion.find(params[:id])
-    @completion.update(completed: completion_params[:completed])
+    @completion.update(completion_params)
     render json: @completion.format_json
   end
 
   private
 
   def completion_params
-    params.require(:completion).permit(:user_id, :team_id, :workout_pack_id, :points, :league_pack_id, :completed)
+    params.require(:completion).permit(:user_id, :team_id, :workout_pack_id, :points, :league_pack_id, :status)
   end
 
   def check_for_existing
