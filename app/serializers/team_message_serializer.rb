@@ -1,5 +1,5 @@
 class TeamMessageSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :content
   has_one :user
-  has_one :team
+  # has_one :team
 end

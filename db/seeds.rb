@@ -10,6 +10,8 @@ Completion.destroy_all
 Pack.destroy_all
 Exercise.destroy_all
 WorkoutExercise.destroy_all
+LeagueMessage.destroy_all
+TeamMessage.destroy_all
 
 # CREATE USERS
 # greg = User.create(name: 'Greg', email: 'gj@gmail.com')
@@ -226,4 +228,14 @@ puts '...creating Completions'
 statuses = ['claimed', 'completed', 'open']
 50.times do 
   Completion.create(user: User.all.sample, team: Team.all.sample, workout_pack: WorkoutPack.all.sample, league_pack: LeaguePack.all.sample, status: statuses.sample)
+end 
+
+# CREATE LEAGUE MESSAGES
+100.times do 
+  LeagueMessage.create(user: User.all.sample, league: League.all.sample, content: Faker::Books::Dune.quote)
+end 
+
+# CREATE TEAM MESSAGES
+100.times do 
+  TeamMessage.create(user: User.all.sample, team: Team.all.sample, content: Faker::Movies::BackToTheFuture.quote)
 end 

@@ -2,6 +2,7 @@ class League < ApplicationRecord
   has_many :teams, dependent: :destroy
   has_many :league_packs, dependent: :destroy
   has_many :packs, through: :league_packs
+  has_many :league_messages
 
   has_many :league_messages
   # has_many :users, through: :league_messages
@@ -40,6 +41,7 @@ class League < ApplicationRecord
       teams: self.teams.map { |team| team.format_json },
       passcode: self.passcode,
       league_packs: self.league_packs.map { |league_pack| league_pack.format_json },
+      messages: self.league_messages.map {|message| {user: message.user, content: message.content, id: message.id}},
       # packs: self.packs.map { pack.format_json },
       # selected_pack: self.selected_pack,
       selected_pack: self.league_packs.last.format_json,
