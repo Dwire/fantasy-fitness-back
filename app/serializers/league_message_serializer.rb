@@ -1,5 +1,5 @@
 class LeagueMessageSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :content
   has_one :user
-  has_one :league
+  # has_one :league
 end
