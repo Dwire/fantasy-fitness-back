@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_002026) do
+ActiveRecord::Schema.define(version: 2020_05_26_171912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_002026) do
     t.integer "pack_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "week"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -59,11 +60,14 @@ ActiveRecord::Schema.define(version: 2020_05_15_002026) do
     t.string "description"
     t.string "motto"
     t.integer "number_of_teams"
-    t.integer "roster_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "selected_pack_id"
     t.string "passcode"
+    t.integer "number_of_weeks"
+    t.datetime "start_date"
+    t.integer "number_of_players"
+    t.integer "user_id"
   end
 
   create_table "packs", force: :cascade do |t|

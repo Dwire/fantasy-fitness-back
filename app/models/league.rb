@@ -3,8 +3,9 @@ class League < ApplicationRecord
   has_many :league_packs, dependent: :destroy
   has_many :packs, through: :league_packs
   has_many :league_messages
-
+  belongs_to :user
   has_many :league_messages
+
   # has_many :users, through: :league_messages
 
   def build_teams
@@ -37,7 +38,6 @@ class League < ApplicationRecord
       description: self.description,
       motto: self.motto,
       number_of_teams: self.number_of_teams,
-      roster_size: self.roster_size,
       teams: self.teams.map { |team| team.format_json },
       passcode: self.passcode,
       league_packs: self.league_packs.map { |league_pack| league_pack.format_json },
