@@ -5,7 +5,7 @@ class Pack < ApplicationRecord
   has_many :leagues, through: :league_packs
 
 
-  def format_json
+def format_json
     {
       id: self.id,
       name: self.name,

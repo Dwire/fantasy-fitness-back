@@ -3,7 +3,9 @@ class Api::V1::PacksController < ApplicationController
 
   def index
     packs = Pack.all
-    render json: PackSerializer.new(packs).serialized_json
+    # render json: PackSerializer.new(packs).serialized_json
+    render json: PackSerializer.new(packs).serializable_hash
+    # render json: packs.format_json
   end
 
   def show
