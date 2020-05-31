@@ -26,9 +26,10 @@ class Api::V1::LeaguesController < ApplicationController
     # need to have the user be a member of the league
     # create a new team for that league AND add user to that new team
 
-    league = League.new(league_params)
+    league = @user.leagues.new(league_params)
     league.generate_passcode
-    if params[:image_url]
+    # if params[:image_url] //-- if images are sent back we want to actyally stor them
+    if false
       cloud = league.save_it(params[:image_url])
       league.image_url = cloud['url']
     else
@@ -65,7 +66,7 @@ class Api::V1::LeaguesController < ApplicationController
   end
 
   def league_params
-    params.permit(:name, :description, :motto, :number_of_teams, :roster_size, :passcode)
+    params.permit(:name, :description, :motto, :number_of_teams, :number_of_players, :number_of_weeks, :passcode)
   end
 
 end

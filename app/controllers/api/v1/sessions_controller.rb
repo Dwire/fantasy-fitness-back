@@ -14,7 +14,6 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def reauth
-    # byebug
     user = UserSerializer.new(@user).serializable_hash
     render json: { user: user }, status: :accepted
   end
