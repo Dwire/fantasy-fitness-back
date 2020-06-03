@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :completions, only: [:create, :update, :destroy]
       resources :league_messages, only: [:create, :destroy, :update]
       resources :team_messages, only: [:create, :destroy, :update]
+      post 'user_teams/randomize', to: 'user_teams#randomize'
       post '/login', to: 'sessions#create'
       post '/reauth', to: 'sessions#reauth'
       post '/leagues/:id/invite', to: 'leagues#invite'

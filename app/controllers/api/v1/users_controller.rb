@@ -33,6 +33,7 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    byebug
     if @user.save
       render json: UserSerializer.new(@user).serialized_json
     else
@@ -55,7 +56,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:username, :email, :password, :password_confirmation, :first_name, :last_name, :bio)
+    params.permit(:username, :email, :password, :password_confirmation, :first_name, :last_name, :bio, :default_league_id)
   end
 
 end

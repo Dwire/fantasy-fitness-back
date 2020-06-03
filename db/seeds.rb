@@ -56,7 +56,20 @@ ff_league = League.create(
   description: Faker::Movie.quote,
   motto: Faker::TvShows::GameOfThrones.quote,
   number_of_teams: 10,
-  roster_size: 3
+  number_of_weeks: 3,
+  number_of_players: 30,
+  user_id: User.all.sample.id
+)
+
+wwc_league = League.create(
+  name: 'Winter Workout Challenge',
+  image_url: Faker::Avatar.image,
+  description: Faker::Movie.quote,
+  motto: Faker::TvShows::GameOfThrones.quote,
+  number_of_teams: 10,
+  number_of_weeks: 3,
+  number_of_players: 30,
+  user_id: User.all.sample.id
 )
 
 # CREATE PACKS
@@ -70,11 +83,14 @@ cardio = Pack.create(name: 'Cardio', description: Faker::Movie.quote, image_url:
 puts '...creating Teams'
 pats = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
 jags = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
-browns = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+broncos = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
+lions = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
+bears = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
 
 # CREATE USERTEAMS (JOIN TABLE)
 puts '...creating Greg on a UserTeam'
-UserTeam.create(user: greg, team: Team.all.sample )
+UserTeam.create(user: greg, team: pats )
+UserTeam.create(user: greg, team: bears )
 
 puts '...creating UserTeams'
 10.times do

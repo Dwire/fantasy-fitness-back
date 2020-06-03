@@ -44,7 +44,7 @@ class League < ApplicationRecord
       messages: self.league_messages.map {|message| {user: message.user, content: message.content, id: message.id}},
       # packs: self.packs.map { pack.format_json },
       # selected_pack: self.selected_pack,
-      # selected_pack: self.league_packs.last.format_json,
+      selected_pack: (self.league_packs.last.format_json unless self.league_packs.length <= 0),
       # selected_team: self.selected_team - Doing this on the FrontEnd
 
       # #Does selected_pack replace and teams replace these

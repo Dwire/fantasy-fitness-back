@@ -29,7 +29,8 @@ class User < ApplicationRecord
       last_name: self.last_name,
       tagline: self.tagline,
       bio: self.bio,
-      avatar: self.avatar
+      avatar: self.avatar,
+      default_league_id: self.default_league_id
     }
   end
 
