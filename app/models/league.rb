@@ -28,6 +28,33 @@ class League < ApplicationRecord
     end
   end
 
+  def week_calculator
+   s = Time.now - self.start_date
+   m = s / 60
+   h = m / 60 
+
+   days = h / 24
+
+
+   week_number = days / 7
+  
+   week_number_floor = week_number.floor
+  end 
+
+  def current_pack_slector
+    week_number = self.week_calculator
+    
+    if week_number + 1 <= self.league_packs.count
+      selected_pack = self.league_packs[week_number]
+      selected_pack.format_json
+    else
+      selected_pack = self.league_packs[0] 
+      selected_pack.format_json
+    end 
+    
+    # byebug
+  end 
+
 
 
   def format_json
@@ -37,6 +64,7 @@ class League < ApplicationRecord
       image_url: self.image_url,
       description: self.description,
       motto: self.motto,
+      start_date: self.start_date,
       number_of_teams: self.number_of_teams,
       teams: self.teams.map { |team| team.format_json },
       passcode: self.passcode,
@@ -44,7 +72,10 @@ class League < ApplicationRecord
       messages: self.league_messages.map {|message| {user: message.user, content: message.content, id: message.id}},
       # packs: self.packs.map { pack.format_json },
       # selected_pack: self.selected_pack,
-      selected_pack: (self.league_packs.last.format_json unless self.league_packs.length <= 0),
+
+      # selected_pack: (self.league_packs.last.format_json unless self.league_packs.length <= 0)
+      selected_pack: (self.current_pack_slector unless self.league_packs.length <= 0)
+
       # selected_team: self.selected_team - Doing this on the FrontEnd
 
       # #Does selected_pack replace and teams replace these
@@ -53,5 +84,9 @@ class League < ApplicationRecord
 
     }
   end
+
+  # start date
+  # current date 
+  # days between dividedi by 7
 
 end

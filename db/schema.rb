@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.integer "team_id"
     t.integer "workout_pack_id"
     t.integer "league_pack_id"
-    t.string "status"
+    t.string "status", default: "open"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "workout_id"

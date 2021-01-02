@@ -34,6 +34,7 @@ greg = User.create(
   password: 'pass123',
 )
 
+
 puts '...creating other users'
 10.times do
   User.create(
@@ -58,7 +59,8 @@ ff_league = League.create(
   number_of_teams: 10,
   number_of_weeks: 3,
   number_of_players: 30,
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  start_date: Time.now - 12.day
 )
 
 wwc_league = League.create(
@@ -69,7 +71,8 @@ wwc_league = League.create(
   number_of_teams: 10,
   number_of_weeks: 3,
   number_of_players: 30,
-  user_id: User.all.sample.id
+  user_id: User.all.sample.id,
+  start_date: Time.now - 16.day
 )
 
 # CREATE PACKS
@@ -117,7 +120,7 @@ crunch = Exercise.create(
   name: "Crunch",
   description: "Lie down on your back with your knees bent, put hands against your ears, roll your shoulder blades up",
   tutorial: 'https://www.youtube.com/watch?v=_M2Etme-tfE',
-  image_url: 'https://www.popworkouts.com/wp-content/uploads/2012/12/upper-body-crunches.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-fitness-woman-using-a-yoga-ball-during-her-workout-139947529.jpg',
   category: 'Core'
 )
 
@@ -125,7 +128,7 @@ twist = Exercise.create(
   name: "Abdominal Twist",
   description: "Sit on floor with your knees bent, reach hands from side to side, repeating",
   tutorial: 'https://www.youtube.com/watch?v=drvh39387LY',
-  image_url: 'https://julielohre.com/wp-content/uploads/2018/02/Russian-Twist-Exercise.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-fitness-woman-using-a-yoga-ball-during-her-workout-139947529.jpg',
   category: 'Core'
 )
 
@@ -133,7 +136,7 @@ vup = Exercise.create(
   name: "V-Ups",
   description: "Lie down flat on the floor, bring your legs into the air and touch your toes",
   tutorial: 'https://www.youtube.com/watch?v=iP2fjvG0g3w',
-  image_url: 'https://www.popworkouts.com/wp-content/uploads/2012/11/V-Ups-exercise.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-fitness-woman-using-a-yoga-ball-during-her-workout-139947529.jpg',
   category: 'Core'
 )
 
@@ -143,7 +146,7 @@ row = Exercise.create(
   name: "Bent Over Row",
   description: "Stand with slightly bent knees and a straight back bent over. Hold a bar and pull straight up to your chest",
   tutorial: 'https://www.youtube.com/watch?v=-koP10y1qZI',
-  image_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/1010-bboe-dumbell-row-1441032989.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-sports-background-runner-side-view-of-a-jogger-legs-isolated-on-black-296029316.jpg',
   category: 'Back'
 )
 
@@ -151,7 +154,7 @@ pull_up = Exercise.create(
   name: "Wide-Grip Pull-Up",
   description: "Hang from bar with your shoulders engaged and a wide grip, pull up, repeat",
   tutorial: 'https://www.youtube.com/watch?v=eGo4IYlbE5g',
-  image_url: 'https://bodybuilding-wizard.com/wp-content/uploads/2014/12/pullup.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-sports-background-runner-side-view-of-a-jogger-legs-isolated-on-black-296029316.jpg',
   category: 'Back'
 )
 
@@ -159,7 +162,7 @@ deadlift = Exercise.create(
   name: "Barbell Deadlift",
   description: "Approach the bar in the center with feet shoulder width apart. Bend over at the hips to grip the bar. Breathe, engage. Keep your chest up and back arched. Begin driving the bar up.",
   tutorial: 'https://www.youtube.com/watch?v=3UwO0fKukRw',
-  image_url: 'https://www.oxygenmag.com/.image/t_share/MTQ1MzQ3MzE1Njk5MjMwNDgx/one-arm-barbell-deadlift.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-sports-background-runner-side-view-of-a-jogger-legs-isolated-on-black-296029316.jpg',
   category: 'Back'
 )
 
@@ -169,7 +172,7 @@ squats = Exercise.create(
   name: "Barbell Squat",
   description: "Begin with the barbell supported on top of the traps. Set your feet to hip width apart. Descend by flexing the knees, refraining from moving the hips back as much as possible. Keep your knees aligned with your feet. Continue all the way down, keeping the weight on the front of the heel. At the moment the upper legs contact the lower legs reverse the motion, driving the weight upward.",
   tutorial: 'https://www.youtube.com/watch?v=nEQQle9-0NA',
-  image_url: 'https://hips.hearstapps.com/vidthumb/brightcove/578940a2e694aa370d88355b/thumb_1468612771.png',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-water-splash-on-the-black-background-624936377.jpg',
   category: 'Legs'
 )
 
@@ -177,7 +180,7 @@ lunge = Exercise.create(
   name: "Dumbbell Lunge",
   description: "Hold the dumbbells at your side. Descend by taking a step forward with one foot and pushing the forward knee near the ground. Press back up and switch sides.",
   tutorial: 'https://www.youtube.com/watch?v=D7KaRcUTQeE',
-  image_url: 'https://nicofitwolff.files.wordpress.com/2018/03/32723365_m.jpg?w=590&h=394',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
   category: 'Legs'
 )
 
@@ -185,7 +188,7 @@ press = Exercise.create(
   name: "Leg Press",
   description: "Using the leg press machine, sit down and place your feet on the platform, shoulder width apart. Lower the platform until your upper and lower legs make a 90-degree angle. Push back up.",
   tutorial: 'https://www.youtube.com/watch?v=GvRgijoJ2xY',
-  image_url: 'https://www.muscleandperformance.com/.image/t_share/MTQ1MzY2OTYwMzI1MDc2NTM1/leg-press-calf-raise.jpg',
+  image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
   category: 'Legs'
 )
 
@@ -195,7 +198,7 @@ core = Workout.create(
     name: "3 Step Core Workout",
     description: " 2 X 1 minute crunch, 1 minute twist, 1 minute v-ups",
     default_points: 200,
-    image_url: 'https://s3.amazonaws.com/m.sworkit.com/assets/exercises/v2/images/standard/middle-frame/elevatedcrunches.jpg',
+    image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
     category: 'weightlifting'
   )
 
@@ -203,7 +206,7 @@ back = Workout.create(
     name: "3 Step Back Workout",
     description: "3 x 6 rows, 3 x 8 pull ups, 3 x 8 deadlifts",
     default_points: 300,
-    image_url: 'https://bodybuilding-wizard.com/wp-content/uploads/2014/12/pullup.jpg',
+    image_url: 'https://www.shutterstock.com/image-photo/frame-organic-fresh-vegetables-like-eggplant-1189069276',
     category: 'weightlifting'
   )
 #
@@ -211,7 +214,7 @@ legs = Workout.create(
     name: "3 Step Leg Workout",
     description: "3 x 8 squats, 3 x 8 dumbbell lunges, 3 x 8 leg press",
     default_points: rand(0..100),
-    image_url: 'https://hips.hearstapps.com/vidthumb/brightcove/578940a2e694aa370d88355b/thumb_1468612771.png',
+    image_url: 'https://image.shutterstock.com/z/stock-photo-frame-with-organic-fresh-vegetables-like-eggplant-tomato-herbs-etc-on-rustic-background-with-copy-1189069276.jpg',
     category: 'weightlifting'
   )
 
