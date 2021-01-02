@@ -1,17 +1,19 @@
 #
+
+Completion.destroy_all
+UserTeam.destroy_all
+LeaguePack.destroy_all
+WorkoutPack.destroy_all
+WorkoutExercise.destroy_all
+LeagueMessage.destroy_all
+TeamMessage.destroy_all
+
 User.destroy_all
 Team.destroy_all
 League.destroy_all
 Workout.destroy_all
 Pack.destroy_all
 Exercise.destroy_all
-UserTeam.destroy_all
-LeaguePack.destroy_all
-WorkoutPack.destroy_all
-Completion.destroy_all
-WorkoutExercise.destroy_all
-LeagueMessage.destroy_all
-TeamMessage.destroy_all
 
 # CREATE USERS
 
