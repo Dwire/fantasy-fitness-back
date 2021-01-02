@@ -1,26 +1,26 @@
 #
 User.destroy_all
 Team.destroy_all
-UserTeam.destroy_all
 League.destroy_all
-LeaguePack.destroy_all
 Workout.destroy_all
-WorkoutPack.destroy_all
-Completion.destroy_all
 Pack.destroy_all
 Exercise.destroy_all
+UserTeam.destroy_all
+LeaguePack.destroy_all
+WorkoutPack.destroy_all
+Completion.destroy_all
 WorkoutExercise.destroy_all
 LeagueMessage.destroy_all
 TeamMessage.destroy_all
 
 # CREATE USERS
-# greg = User.create(name: 'Greg', email: 'gj@gmail.com')
-# arren = User.create(name: 'Arren', email: 'ar@gmail.com')
-# forrest = User.create(name: 'Forrest', email: 'fd@gmail.com')
-# harrison = User.create(name: 'Harrison', email: 'hb@gmail.com')
-# amelia = User.create(name: 'Amelia', email: 'ad@gmail.com')
-# robin = User.create(name: 'Robin', email: 'rw@gmail.com')
-# eva = User.create(name: 'Eva', email: 'ed@gmail.com')
+
+
+# brad = User.create(name: 'Brad', email: 'bd@bd.com')
+# alex = User.create(name: 'Alex', email: 'lazer@lazer.com')
+# joan = User.create(name: 'Joan', email: 'j@j.com')
+# david = User.create(name: 'David', email: 'd@d.com')
+# rob = User.create(name: 'Rob', email: 'rj@rj.com')
 
 puts '...creating Greg'
 greg = User.create(
@@ -31,23 +31,165 @@ greg = User.create(
   avatar: 'http://www.bandt.com.au/information/uploads/2016/11/Dodgeball-1920-Everett.jpg',
   bio: 'Gym Class Hero',
   tagline: 'I Lift Things Up and I Put Them Down',
-  password: 'pass123',
-)
-
-
-puts '...creating other users'
-10.times do
-  User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    username: Faker::Name.initials,
-    email: Faker::Internet.email,
-    avatar: Faker::Avatar.image,
-    bio: Faker::Movies::HarryPotter.quote,
-    tagline: Faker::TvShows::NewGirl.quote,
-    password: 'pass123',
+  password: 'pass123'
   )
-end
+puts '...creating Forrest'
+forrest = User.create(
+  first_name: 'Forrest', 
+  last_name: "Dwyer",
+  email: 'f@f.com',
+  username: "WorkForRest",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Arren'
+arren = User.create(
+  first_name: 'Arren', 
+  last_name: "Alexander",
+  email: 'ar@ar.com',
+  username: "arren",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating jake'
+jake = User.create(
+  first_name: 'Jake', 
+  last_name: "Deluise",
+  email: 'snake@snake.com',
+  username: "snake",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating harrison'
+harrison = User.create(
+  first_name: 'Harrison', 
+  last_name: "Borges",
+  email: 'h@h.com',
+  username: "hbraze",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Amelia'
+amelia = User.create(
+  first_name: 'Amelia', 
+  last_name: "Dwyer",
+  email: 'a@a.com',
+  username: "adpumps",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Robin'
+robin = User.create(
+  first_name: 'Robin', 
+  last_name: "Wilson",
+  email: 'r@r.com',
+  username: "rgzw",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Eva'
+eva = User.create(
+  first_name: 'Eva', 
+  last_name: "Dwyer",
+  email: 'e@e.com',
+  username: "evaIslandWarrior",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Brandon'
+brandon = User.create(
+  first_name: 'Brandon', 
+  last_name: "Wilson",
+  email: 'b@b.com',
+  username: "brandy",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Brad'
+brad = User.create(
+  first_name: 'Brad', 
+  last_name: "Degnan",
+  email: 'bd@bd.com',
+  username: "dingus",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Alex'
+alex = User.create(
+  first_name: 'Alex', 
+  last_name: "lazarawich",
+  email: 'al@al.com',
+  username: "lazer",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Joan'
+joan = User.create(
+  first_name: 'Joan', 
+  last_name: "Dwyer",
+  email: 'j@j.com',
+  username: "joanbone",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating David'
+david = User.create(
+  first_name: 'David', 
+  last_name: "Dwyer",
+  email: 'd@d.com',
+  username: "spindoctor",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Rob'
+rob = User.create(
+  first_name: 'Rob', 
+  last_name: "Jeffway",
+  email: 'rj@rj.com',
+  username: "theJeffway",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+puts '...creating Samantha'
+samantha = User.create(
+  first_name: 'Samantha', 
+  last_name: "Roman",
+  email: 'sr@sr.com',
+  username: "samantha",
+  avatar: Faker::Avatar.image,
+  bio: Faker::TvShows::DumbAndDumber.quote,
+  tagline: Faker::TvShows::NewGirl.quote,
+  password: 'pass123'
+  )
+
+
+
 
 # CREATE LEAGUES
 puts '...creating leagues'
@@ -56,29 +198,26 @@ ff_league = League.create(
   image_url: Faker::Avatar.image,
   description: Faker::Movie.quote,
   motto: Faker::TvShows::GameOfThrones.quote,
-  number_of_teams: 10,
-  number_of_weeks: 3,
-  number_of_players: 30,
+  number_of_teams: 5,
+  number_of_weeks: 5,
+  number_of_players: 15,
   user_id: User.all.sample.id,
-  start_date: Time.now - 12.day
+  start_date: Time.now - 12.day,
+  user_id: greg.id
+  )
+  
+  wwc_league = League.create(
+    name: 'Winter Workout Challenge',
+    image_url: Faker::Avatar.image,
+    description: Faker::Movie.quote,
+    motto: Faker::TvShows::GameOfThrones.quote,
+    number_of_teams: 3,
+    number_of_weeks: 3,
+    number_of_players: 9,
+    user_id: User.all.sample.id,
+    start_date: Time.now - 16.day,
+    user_id: greg.id
 )
-
-wwc_league = League.create(
-  name: 'Winter Workout Challenge',
-  image_url: Faker::Avatar.image,
-  description: Faker::Movie.quote,
-  motto: Faker::TvShows::GameOfThrones.quote,
-  number_of_teams: 10,
-  number_of_weeks: 3,
-  number_of_players: 30,
-  user_id: User.all.sample.id,
-  start_date: Time.now - 16.day
-)
-
-# CREATE PACKS
-puts '...creating packs'
-yoga = Pack.create(name: 'Yoga Pack', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-cardio = Pack.create(name: 'Cardio', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
 
 
 
@@ -86,35 +225,56 @@ cardio = Pack.create(name: 'Cardio', description: Faker::Movie.quote, image_url:
 puts '...creating Teams'
 pats = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
 jags = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+chargers = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+jets = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+bears = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: ff_league, image_url: Faker::Fillmurray.image)
+
+
 broncos = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
 lions = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-bears = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
+colts = Team.create(name: Faker::Team.name, motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
+
+
+
 
 # CREATE USERTEAMS (JOIN TABLE)
-puts '...creating Greg on a UserTeam'
+puts '...creating 5 UserTeams for ff league'
 UserTeam.create(user: greg, team: pats )
-UserTeam.create(user: greg, team: bears )
+UserTeam.create(user: forrest, team: pats )
+UserTeam.create(user: arren, team: pats )
 
-puts '...creating UserTeams'
-10.times do
-  UserTeam.create(user: User.all.sample, team: Team.all.sample)
-end
+UserTeam.create(user: jake, team: jags )
+UserTeam.create(user: harrison, team: jags )
+UserTeam.create(user: amelia, team: jags )
+
+UserTeam.create(user: robin, team: chargers )
+UserTeam.create(user: eva, team: chargers )
+UserTeam.create(user: brandon, team: chargers )
+
+UserTeam.create(user: brad, team: jets )
+UserTeam.create(user: alex, team: jets )
+UserTeam.create(user: joan, team: jets )
+
+UserTeam.create(user: david, team: bears )
+UserTeam.create(user: rob, team: bears )
+UserTeam.create(user: samantha, team: bears )
+
+puts '...creating 3 UserTeams for wwc league'
+UserTeam.create(user: greg, team: broncos )
+UserTeam.create(user: forrest, team: broncos )
+UserTeam.create(user: arren, team: broncos )
+
+UserTeam.create(user: jake, team: lions )
+UserTeam.create(user: harrison, team: lions )
+UserTeam.create(user: amelia, team: lions )
+
+UserTeam.create(user: robin, team: colts )
+UserTeam.create(user: eva, team: colts )
+UserTeam.create(user: brandon, team: colts )
 
 
 
 
-# categories = %w(Cardio Yoga Health Weightlifting Mindfullness Core Back Legs Chest Arms)
-
-# name
-# description
-# tutorial
-# image_url
-# category
-
-# Create EXERCISES
-
-
-# ABS
 
 crunch = Exercise.create(
   name: "Crunch",
@@ -195,51 +355,120 @@ press = Exercise.create(
 # CREATE WORKOUTS
 
 core = Workout.create(
-    name: "3 Step Core Workout",
-    description: " 2 X 1 minute crunch, 1 minute twist, 1 minute v-ups",
+    name: "Core Crush",
+    description: "Work the Core",
     default_points: 200,
-    image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
-    category: 'weightlifting'
+    image_url: 'https://image.shutterstock.com/z/stock-photo-fitness-woman-using-a-yoga-ball-during-her-workout-139947529.jpg',
+    category: 'Core'
   )
 
-back = Workout.create(
-    name: "3 Step Back Workout",
-    description: "3 x 6 rows, 3 x 8 pull ups, 3 x 8 deadlifts",
+strength = Workout.create(
+    name: "Get Big",
+    description: "A strength Workout of your choosing. 15min minimum",
     default_points: 300,
-    image_url: 'https://www.shutterstock.com/image-photo/frame-organic-fresh-vegetables-like-eggplant-1189069276',
-    category: 'weightlifting'
+    image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
+    category: 'Strength'
   )
 #
-legs = Workout.create(
-    name: "3 Step Leg Workout",
-    description: "3 x 8 squats, 3 x 8 dumbbell lunges, 3 x 8 leg press",
+yoga = Workout.create(
+    name: "Center Yourself",
+    description: "One yoga class of at least 30minutes",
     default_points: rand(0..100),
     image_url: 'https://image.shutterstock.com/z/stock-photo-frame-with-organic-fresh-vegetables-like-eggplant-tomato-herbs-etc-on-rustic-background-with-copy-1189069276.jpg',
-    category: 'weightlifting'
+    category: 'Yoga'
   )
 
-legs.exercises = [squats, press, lunge]
+health = Workout.create(
+    name: "Eat Better",
+    description: "Eat a vegtibles every day",
+    default_points: rand(0..100),
+    image_url: 'https://image.shutterstock.com/z/stock-photo-frame-with-organic-fresh-vegetables-like-eggplant-tomato-herbs-etc-on-rustic-background-with-copy-1189069276.jpg',
+    category: 'Health'
+  )
+
+cardio = Workout.create(
+    name: "30 minute Cardio",
+    description: "30 min cardio (one shot)",
+    default_points: rand(0..100),
+    image_url: 'https://image.shutterstock.com/z/stock-photo-sports-background-runner-side-view-of-a-jogger-legs-isolated-on-black-296029316.jpg',
+    category: 'Cardio'
+  )
+
+running = Workout.create(
+    name: "Mile Marker 10",
+    description: "run a total of 10 miles this week",
+    default_points: rand(0..100),
+    image_url: 'https://image.shutterstock.com/z/stock-photo-sports-background-runner-side-view-of-a-jogger-legs-isolated-on-black-296029316.jpg',
+    category: 'Running'
+  )
+
+bike = Workout.create(
+    name: "Road Warrior",
+    description: "Bike 5 miles",
+    default_points: rand(0..100),
+    image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
+    category: 'Bike'
+  )
+
+meditation = Workout.create(
+    name: "Find Self",
+    description: "Meditate 3 times for 5 minutes this week",
+    default_points: rand(0..100),
+    image_url: 'https://image.shutterstock.com/z/stock-photo-frame-with-organic-fresh-vegetables-like-eggplant-tomato-herbs-etc-on-rustic-background-with-copy-1189069276.jpg',
+    category: 'Meditation'
+  )
+
+strength.exercises = [squats, press, lunge]
 core.exercises = [crunch, twist, vup]
-back.exercises = [row, pull_up, deadlift]
+yoga.exercises = [row, pull_up, deadlift]
+bike.exercises = [squats, press, lunge]
+meditation.exercises = [crunch, twist, vup]
+cardio.exercises = [squats, press, lunge]
+health.exercises = [crunch, twist, vup]
+running.exercises = [row, pull_up, deadlift]
 
-first_pack = Pack.create(
-  name: "Essential Core, Back, and Legs",
-  description: "Basic excercises for strength training and muscle building",
-  image_url: "https://www.wellandgood.com/wp-content/uploads/2018/01/instagram-base-body-babes-sumo-squat.jpg"
-)
 
-50.times do 
-  WorkoutPack.create(workout: Workout.all.sample, pack: Pack.all.sample, points: rand(1..5))
+# CREATE PACKS
+puts '...creating packs'
+wwc1 = Pack.create(name: 'WWC Week1', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc2 = Pack.create(name: 'WWC Week2', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc3 = Pack.create(name: 'WWC Week3', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc4 = Pack.create(name: 'WWC Week4', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc5 = Pack.create(name: 'WWC Week5', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc6 = Pack.create(name: 'WWC Week6', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+
+
+#CREATE WorkoutPacks
+puts '...creating WorkoutPacks'
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc1, points: rand(1..5))
+end
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc2, points: rand(1..5))
+end
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc3, points: rand(1..5))
+end
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc4, points: rand(1..5))
+end
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc5, points: rand(1..5))
+end
+30.times do 
+  WorkoutPack.create(workout: Workout.all.sample, pack: wwc6, points: rand(1..5))
 end
 
-League.last.packs.push(first_pack)
+
 
 # debugger
 # CREATE LEAGUE_PACKS
 puts '...creating LeaguePacks'
-lp1 = LeaguePack.create(league: ff_league, pack: yoga)
-lp2 = LeaguePack.create(league: ff_league, pack: cardio)
-lp3 = LeaguePack.create(league: ff_league, pack: first_pack)
+lp1 = LeaguePack.create(league: ff_league, pack: wwc1)
+lp2 = LeaguePack.create(league: ff_league, pack: wwc2)
+lp3 = LeaguePack.create(league: ff_league, pack: wwc3)
+lp4 = LeaguePack.create(league: ff_league, pack: wwc4)
+lp5 = LeaguePack.create(league: ff_league, pack: wwc5)
 
 
 # CREATE COMPLETIONS
