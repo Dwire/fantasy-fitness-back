@@ -69,7 +69,7 @@ class League < ApplicationRecord
       teams: self.teams.map { |team| team.format_json },
       passcode: self.passcode,
       league_packs: self.league_packs.map { |league_pack| league_pack.format_json },
-      messages: self.league_messages.map {|message| {user: message.user, content: message.content, id: message.id}},
+      messages: self.league_messages.last(75).map {|message| {user: message.user, content: message.content, id: message.id}},
       # packs: self.packs.map { pack.format_json },
       # selected_pack: self.selected_pack,
 

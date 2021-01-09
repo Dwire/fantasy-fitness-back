@@ -34,7 +34,7 @@ class Team < ApplicationRecord
       league: self.league,
       completions: self.completions,
       week_completions: self.current_week_completion,
-      messages: self.team_messages.map {|message| {user: message.user, content: message.content, id: message.id}}
+      messages: self.team_messages.last(75).map {|message| {user: message.user, content: message.content, id: message.id}}
     }
   end
 end
