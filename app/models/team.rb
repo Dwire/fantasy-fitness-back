@@ -8,18 +8,19 @@ class Team < ApplicationRecord
   # has_many :user_messages, through: :team_messages, source: :user
 
   def days_since_beginning_of_week(completion)
-    seconds = completion.updated_at - self.completions.first.updated_at.beginning_of_week
-    byebug
+    # seconds = completion.updated_at - completion.updated_at.beginning_of_week
+    seconds = completion.updated_at - Time.now.beginning_of_week
     mminutes = seconds / 60
     hours = mminutes / 60 
     days = hours / 24
-
+    # byebug
+    
     days.floor
     
   end 
 
   def current_week_completion
-    self.completions.select{|completion| days_since_beginning_of_week(completion) < 7}
+    self.completions.select{|completion| days_since_beginning_of_week(completion) >= 0 }
   end 
 
   def format_json
