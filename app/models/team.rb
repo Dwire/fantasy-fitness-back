@@ -7,6 +7,21 @@ class Team < ApplicationRecord
 
   # has_many :user_messages, through: :team_messages, source: :user
 
+  def days_since_beginning_of_week(completion)
+    seconds = completion.updated_at - self.completions.first.updated_at.beginning_of_week
+    byebug
+    mminutes = seconds / 60
+    hours = mminutes / 60 
+    days = hours / 24
+
+    days.floor
+    
+  end 
+
+  def current_week_completion
+    self.completions.select{|completion| days_since_beginning_of_week(completion) < 7}
+  end 
+
   def format_json
     {
       id: self.id,
@@ -17,6 +32,7 @@ class Team < ApplicationRecord
       teammates: self.users.map {|teammate| teammate.format_json },
       league: self.league,
       completions: self.completions,
+      week_completions: self.current_week_completion,
       messages: self.team_messages.map {|message| {user: message.user, content: message.content, id: message.id}}
     }
   end

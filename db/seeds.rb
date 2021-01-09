@@ -203,7 +203,6 @@ ff_league = League.create(
   number_of_teams: 5,
   number_of_weeks: 5,
   number_of_players: 15,
-  user_id: User.all.sample.id,
   start_date: Time.now - 12.day,
   user_id: greg.id
   )
@@ -216,7 +215,6 @@ ff_league = League.create(
     number_of_teams: 3,
     number_of_weeks: 3,
     number_of_players: 9,
-    user_id: User.all.sample.id,
     start_date: Time.now - 16.day,
     user_id: greg.id
 )
@@ -471,6 +469,10 @@ lp2 = LeaguePack.create(league: ff_league, pack: wwc2)
 lp3 = LeaguePack.create(league: ff_league, pack: wwc3)
 lp4 = LeaguePack.create(league: ff_league, pack: wwc4)
 lp5 = LeaguePack.create(league: ff_league, pack: wwc5)
+
+lp6 = LeaguePack.create(league: wwc_league, pack: wwc3)
+lp7 = LeaguePack.create(league: wwc_league, pack: wwc4)
+lp8 = LeaguePack.create(league: wwc_league, pack: wwc5)
 
 
 # CREATE COMPLETIONS
