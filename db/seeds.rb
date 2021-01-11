@@ -589,13 +589,13 @@ UserTeam.create(user: kim, team: bills )
 # - Bike
 # - Core
 
-# - Flash
-# - Special
-# - Endurance
-# - Movement
-# - Recovery
-# - New
-# - Crazy
+# - Flash - Lightning/Present
+# - Special - 
+# - Endurance - Sand Timer
+# - Movement - movement
+# - Recovery -  Stretch/Water
+# - New - 
+# - Crazy - 
 
 
 
@@ -890,7 +890,7 @@ new_hip = Workout.create(
   )
 crazy_juice = Workout.create(
     name: "Who needs It?",
-    description: "THE CRAZY CHALLENGE: Juice Cleanse. Go the whole day without eating. ",
+    description: "Crazy Challenge: Juice Cleanse. Go the whole day without eating. ",
     default_points: 200,
     image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
     category: 'Crazy'
