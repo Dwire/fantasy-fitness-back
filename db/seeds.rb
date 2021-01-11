@@ -18,7 +18,7 @@ Exercise.destroy_all
 # CREATE USERS
 puts '...creating Greg'
 greg = User.create(
-  first_name: 'Gregory',
+  first_name: 'Greg',
   last_name: 'Dwyer',
   username: 'Dwire',
   email: 'g@g.com',
@@ -236,9 +236,9 @@ scott = User.create(
   tagline: Faker::TvShows::NewGirl.quote,
   password: 'pass123'
   )
-puts '...creating Kyle'
-kyle = User.create(
-  first_name: 'Kyle', 
+puts '...creating Karl'
+karl = User.create(
+  first_name: 'Karl', 
   last_name: "Maxwell",
   email: 'km@km.com',
   username: "tothemax",
@@ -494,7 +494,7 @@ UserTeam.create(user: riley, team: texans )
 UserTeam.create(user: mike, team: texans )
 
 UserTeam.create(user: alex, team: cowboys )
-UserTeam.create(user: kyle, team: cowboys )
+UserTeam.create(user: karl, team: cowboys )
 UserTeam.create(user: jake_vd, team: cowboys )
 
 UserTeam.create(user: melanie, team: bills )
@@ -584,17 +584,19 @@ press = Exercise.create(
 # - Strength 
 # - Cardio
 # - Health
-# - Running
 # - Yoga
 # - Meditation
 # - Bike
 # - Core
 
-# - Stretch?
-# - Flash Challenge
-# - Movement?
-# - Recovery
+# - Flash
+# - Special
 # - Endurance
+# - Movement
+# - Recovery
+# - New
+# - Crazy
+
 
 
 # CREATE WORKOUTS
