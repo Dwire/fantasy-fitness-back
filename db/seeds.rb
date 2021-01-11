@@ -1044,14 +1044,14 @@ meditation5day = Workout.create(
   )
 gratitude1 = Workout.create(
     name: "Gratitude in Action",
-    description: "Complete one act of gratitude each day of the week. Write a friend an email, thank your boss, Be grateful damnit.",
+    description: "Complete one act of gratitude each day of the week (7 Days!). Write a friend an email, thank your boss, Be grateful damnit.",
     default_points: 200,
     image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
     category: 'Meditation'
   )
 gratitude2 = Workout.create(
     name: "Gratitude in Writing",
-    description: "Write 1 thing you are grateful for every morning of the week. You need seven to count it. Be grateful damnit.",
+    description: "Write 1 thing you are grateful for every morning of the week (7 Days!). You need seven to count it. Be grateful damnit.",
     default_points: 200,
     image_url: 'https://image.shutterstock.com/z/stock-photo-young-handsome-sportsman-bodybuilder-weightlifter-with-an-ideal-body-after-coaching-poses-in-front-1117678046.jpg',
     category: 'Meditation'
