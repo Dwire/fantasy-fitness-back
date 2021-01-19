@@ -11,11 +11,11 @@ class Team < ApplicationRecord
     # seconds = completion.updated_at - completion.updated_at.beginning_of_week
     # seconds = completion.updated_at.localtime - Time.now.localtime.beginning_of_week
     # This way both will be working in UTC
-    seconds = completion.updated_at.localtime - Time.current.localtime.beginning_of_week
+    seconds = (completion.updated_at - 5.hour.to_i) - (Time.current.beginning_of_week - 5.hour.to_i)
     mminutes = seconds / 60
     hours = mminutes / 60 
     days = hours / 24
-    
+
     days.floor
     
   end 
