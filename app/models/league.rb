@@ -29,7 +29,9 @@ class League < ApplicationRecord
   end
 
   def week_calculator
-   s = Time.current - self.start_date
+  # Time.current = UTC might be better
+  #  s = Time.current - self.start_date 
+   s = Time.now - self.start_date
    m = s / 60
    h = m / 60 
 
