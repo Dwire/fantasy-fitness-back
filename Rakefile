@@ -4,3 +4,8 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+desc "Start the Rails server"
+task :ss do
+  exec("bundle exec rails s")
+end
