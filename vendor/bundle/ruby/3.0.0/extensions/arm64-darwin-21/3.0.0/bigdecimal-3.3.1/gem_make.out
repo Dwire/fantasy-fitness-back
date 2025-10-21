@@ -1,0 +1,34 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+/Users/gjd/.asdf/installs/ruby/3.0.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20251021-24046-hmj36s.rb extconf.rb
+checking for __builtin_clz()... yes
+checking for __builtin_clzl()... yes
+checking for __builtin_clzll()... yes
+checking for float.h... yes
+checking for math.h... yes
+checking for stdbool.h... yes
+checking for stdlib.h... yes
+checking for x86intrin.h... no
+checking for intrin.h... no
+checking for ruby/atomic.h... yes
+checking for ruby/internal/has/builtin.h... yes
+checking for ruby/internal/static_assert.h... yes
+checking for rb_complex_real() in ruby.h... yes
+checking for rb_complex_imag() in ruby.h... yes
+checking for rb_opts_exception_p() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\=
+compiling bigdecimal.c
+compiling missing.c
+linking shared-object bigdecimal.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 bigdecimal.bundle ./.gem.20251021-24046-1c3tqq

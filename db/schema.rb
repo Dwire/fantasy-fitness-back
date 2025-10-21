@@ -2,16 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_03_044114) do
-
+ActiveRecord::Schema[7.1].define(version: 2020_06_03_044114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.integer "workout_pack_id"
     t.integer "league_pack_id"
     t.string "status", default: "open"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "workout_id"
   end
 
@@ -32,16 +31,16 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.string "tutorial"
     t.string "image_url"
     t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "league_messages", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "league_id"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["league_id"], name: "index_league_messages_on_league_id"
     t.index ["user_id"], name: "index_league_messages_on_user_id"
   end
@@ -49,8 +48,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
   create_table "league_packs", force: :cascade do |t|
     t.integer "league_id"
     t.integer "pack_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "week"
   end
 
@@ -60,12 +59,12 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.string "description"
     t.string "motto"
     t.integer "number_of_teams"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "selected_pack_id"
     t.string "passcode"
     t.integer "number_of_weeks"
-    t.datetime "start_date"
+    t.datetime "start_date", precision: nil
     t.integer "number_of_players"
     t.integer "user_id"
   end
@@ -74,16 +73,16 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.string "name"
     t.string "description"
     t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "team_messages", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["team_id"], name: "index_team_messages_on_team_id"
     t.index ["user_id"], name: "index_team_messages_on_user_id"
   end
@@ -93,15 +92,15 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.string "name"
     t.string "motto"
     t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "user_teams", force: :cascade do |t|
     t.integer "user_id"
     t.integer "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,8 +111,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.string "avatar"
     t.string "bio"
     t.string "tagline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "password_digest"
     t.integer "default_league_id"
   end
@@ -121,16 +120,16 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
   create_table "workout_exercises", force: :cascade do |t|
     t.integer "workout_id"
     t.integer "exercise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "workout_packs", force: :cascade do |t|
     t.integer "pack_id"
     t.integer "workout_id"
     t.integer "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -139,8 +138,8 @@ ActiveRecord::Schema.define(version: 2020_06_03_044114) do
     t.integer "default_points"
     t.string "image_url"
     t.string "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   add_foreign_key "league_messages", "leagues"

@@ -435,18 +435,18 @@ mike = User.create(
 
 # CREATE TEAMS
 puts '...creating Teams'
-pats = Team.create(name: "Queens Gunbit", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-jags = Team.create(name: "Flex Wing", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-chargers = Team.create(name: "Body Party", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-jets = Team.create(name: "MOGO", motto: "We Go Mo", league: wwc_league, image_url: Faker::Fillmurray.image)
-bears = Team.create(name: "Burgers & Burpees", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-broncos = Team.create(name: "Pandemic Power", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-lions = Team.create(name: "Fries + Thighs", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-colts = Team.create(name: "Calling Karen's", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-bucs = Team.create(name: "Quarantoned", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-texans = Team.create(name: "The Hungry Games", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-cowboys = Team.create(name: "Twek Out", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
-bills = Team.create(name: "Farmer Bod", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Fillmurray.image)
+pats = Team.create(name: "Queens Gunbit", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+jags = Team.create(name: "Flex Wing", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+chargers = Team.create(name: "Body Party", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+jets = Team.create(name: "MOGO", motto: "We Go Mo", league: wwc_league, image_url: Faker::Avatar.image)
+bears = Team.create(name: "Burgers & Burpees", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+broncos = Team.create(name: "Pandemic Power", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+lions = Team.create(name: "Fries + Thighs", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+colts = Team.create(name: "Calling Karen's", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+bucs = Team.create(name: "Quarantoned", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+texans = Team.create(name: "The Hungry Games", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+cowboys = Team.create(name: "Twek Out", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
+bills = Team.create(name: "Farmer Bod", motto: Faker::Movie.quote, league: wwc_league, image_url: Faker::Avatar.image)
 
 
 
@@ -1106,12 +1106,12 @@ flash = Workout.create(
 
 # CREATE PACKS
 puts '...creating packs'
-wwc1 = Pack.create(name: 'WWC Week1', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-wwc2 = Pack.create(name: 'WWC Week2', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-wwc3 = Pack.create(name: 'WWC Week3', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-wwc4 = Pack.create(name: 'WWC Week4', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-wwc5 = Pack.create(name: 'WWC Week5', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
-wwc6 = Pack.create(name: 'WWC Week6', description: Faker::Movie.quote, image_url: Faker::Fillmurray.image)
+wwc1 = Pack.create(name: 'WWC Week1', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
+wwc2 = Pack.create(name: 'WWC Week2', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
+wwc3 = Pack.create(name: 'WWC Week3', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
+wwc4 = Pack.create(name: 'WWC Week4', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
+wwc5 = Pack.create(name: 'WWC Week5', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
+wwc6 = Pack.create(name: 'WWC Week6', description: Faker::Movie.quote, image_url: Faker::Avatar.image)
 
 
 #CREATE WorkoutPacks
