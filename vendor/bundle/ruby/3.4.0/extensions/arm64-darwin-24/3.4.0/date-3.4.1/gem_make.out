@@ -1,0 +1,24 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+/Users/gjd/.asdf/installs/ruby/3.4.7/bin/ruby extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with -Werror... yes
+checking for altzone in time.h with -Werror... no
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-ityc7b sitelibdir\=./.gem.20251021-22255-ityc7b clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-ityc7b sitelibdir\=./.gem.20251021-22255-ityc7b
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-ityc7b sitelibdir\=./.gem.20251021-22255-ityc7b install
+/opt/homebrew/bin/ginstall -c -m 0755 date_core.bundle ./.gem.20251021-22255-ityc7b
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-ityc7b sitelibdir\=./.gem.20251021-22255-ityc7b clean

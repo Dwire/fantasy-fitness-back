@@ -1,0 +1,19 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/byebug-12.0.0/ext/byebug
+/Users/gjd/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20251021-78938-3d8que.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\=
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/byebug-12.0.0/ext/byebug
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20251021-78938-jnz73u/byebug

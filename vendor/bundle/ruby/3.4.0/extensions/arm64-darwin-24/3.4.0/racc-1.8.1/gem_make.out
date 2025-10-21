@@ -1,0 +1,18 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/gjd/.asdf/installs/ruby/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-jnqa8q sitelibdir\=./.gem.20251021-22255-jnqa8q clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-jnqa8q sitelibdir\=./.gem.20251021-22255-jnqa8q
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-jnqa8q sitelibdir\=./.gem.20251021-22255-jnqa8q install
+/opt/homebrew/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20251021-22255-jnqa8q/racc
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-jnqa8q sitelibdir\=./.gem.20251021-22255-jnqa8q clean

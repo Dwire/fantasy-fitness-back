@@ -1,0 +1,32 @@
+# -*- encoding: utf-8 -*-
+# stub: cloudinary 1.10.1.pre.rc ruby lib
+
+Gem::Specification.new do |s|
+  s.name = "cloudinary".freeze
+  s.version = "1.10.1.pre.rc".freeze
+
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1".freeze) if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["Nadav Soferman".freeze, "Itai Lahan".freeze, "Tal Lev-Ami".freeze]
+  s.date = "2018-11-20"
+  s.description = "Client library for easily using the Cloudinary service".freeze
+  s.email = ["nadav.soferman@cloudinary.com".freeze, "itai.lahan@cloudinary.com".freeze, "tal.levami@cloudinary.com".freeze]
+  s.homepage = "http://cloudinary.com".freeze
+  s.licenses = ["MIT".freeze]
+  s.rubygems_version = "2.7.8".freeze
+  s.summary = "Client library for easily using the Cloudinary service".freeze
+
+  s.installed_by_version = "3.6.9".freeze
+
+  s.specification_version = 4
+
+  s.add_runtime_dependency(%q<aws_cf_signer>.freeze, [">= 0".freeze])
+  s.add_runtime_dependency(%q<rest-client>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<actionpack>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<nokogiri>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rake>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rspec>.freeze, [">= 3.5".freeze])
+  s.add_development_dependency(%q<rspec-rails>.freeze, [">= 0".freeze])
+  s.add_development_dependency(%q<rubyzip>.freeze, ["<= 1.2.0".freeze])
+  s.add_development_dependency(%q<simplecov>.freeze, [">= 0".freeze])
+end

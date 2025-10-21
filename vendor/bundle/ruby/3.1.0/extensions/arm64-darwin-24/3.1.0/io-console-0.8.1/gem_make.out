@@ -1,0 +1,28 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/io-console-0.8.1/ext/io/console
+/Users/gjd/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20251021-78938-mwzcsc.rb extconf.rb
+checking for rb_syserr_fail_str(0, Qnil)... yes
+checking for rb_interned_str_cstr()... yes
+checking for rb_io_path() in ruby/io.h... no
+checking for rb_io_descriptor() in ruby/io.h... yes
+checking for rb_io_get_write_io() in ruby/io.h... yes
+checking for rb_io_closed_p() in ruby/io.h... no
+checking for rb_io_open_descriptor() in ruby/io.h... no
+checking for rb_ractor_local_storage_value_newkey()... yes
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+checking for ttyname_r()... yes
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/io-console-0.8.1/ext/io/console
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/io-console-0.8.1/ext/io/console
+make DESTDIR\=
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/io-console-0.8.1/ext/io/console
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 console.bundle ./.gem.20251021-78938-17mtzj/io

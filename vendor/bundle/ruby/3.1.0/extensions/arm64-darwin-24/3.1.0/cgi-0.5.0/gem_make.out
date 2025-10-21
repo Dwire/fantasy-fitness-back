@@ -1,0 +1,15 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+/Users/gjd/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20251021-78938-vy7gdd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\=
+compiling escape.c
+linking shared-object cgi/escape.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 escape.bundle ./.gem.20251021-78938-qlrvp9/cgi

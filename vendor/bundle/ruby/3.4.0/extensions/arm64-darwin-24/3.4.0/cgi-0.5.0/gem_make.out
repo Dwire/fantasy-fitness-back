@@ -1,0 +1,18 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+/Users/gjd/.asdf/installs/ruby/3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-wpc1ik sitelibdir\=./.gem.20251021-22255-wpc1ik clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-wpc1ik sitelibdir\=./.gem.20251021-22255-wpc1ik
+compiling escape.c
+linking shared-object cgi/escape.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-wpc1ik sitelibdir\=./.gem.20251021-22255-wpc1ik install
+/opt/homebrew/bin/ginstall -c -m 0755 escape.bundle ./.gem.20251021-22255-wpc1ik/cgi
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.4.0/gems/cgi-0.5.0/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20251021-22255-wpc1ik sitelibdir\=./.gem.20251021-22255-wpc1ik clean

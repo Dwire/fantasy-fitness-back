@@ -1,0 +1,15 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+/Users/gjd/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20251021-78938-o0vi0d.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\=
+compiling escape.c
+linking shared-object erb/escape.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 escape.bundle ./.gem.20251021-78938-ks0y67/erb

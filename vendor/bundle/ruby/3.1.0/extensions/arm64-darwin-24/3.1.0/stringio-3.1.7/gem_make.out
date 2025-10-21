@@ -1,0 +1,16 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+/Users/gjd/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20251021-78938-kh9e05.rb extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 stringio.bundle ./.gem.20251021-78938-lb3fvx
