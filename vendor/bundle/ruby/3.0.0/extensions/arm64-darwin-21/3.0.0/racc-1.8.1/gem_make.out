@@ -1,0 +1,16 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/gjd/.asdf/installs/ruby/3.0.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20251021-12748-wrfbes.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20251021-12748-y3awek/racc

@@ -1,0 +1,22 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/date-3.4.1/ext/date
+/Users/gjd/.asdf/installs/ruby/3.0.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20251021-12748-4pckxw.rb extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/date-3.4.1/ext/date
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/date-3.4.1/ext/date
+make DESTDIR\=
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/date-3.4.1/ext/date
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 date_core.bundle ./.gem.20251021-12748-z30fpy

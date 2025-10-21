@@ -1,0 +1,16 @@
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+/Users/gjd/.asdf/installs/ruby/3.0.2/bin/ruby -I /Users/gjd/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0 -r ./siteconf20251021-12748-ov1m15.rb extconf.rb
+creating Makefile
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+ld: warning: -multiply_defined is obsolete
+
+current directory: /Users/gjd/Development/WWC/fantasy-fitness-back/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20251021-12748-jm4mvg
